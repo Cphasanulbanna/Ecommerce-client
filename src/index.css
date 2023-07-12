@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* AUTH STYLES */
 .btn-primary {
     @apply btn btn-block bg-primary text-white outline-none;
 }
