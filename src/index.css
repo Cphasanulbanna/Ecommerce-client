@@ -7,12 +7,20 @@
     @apply btn btn-block bg-primary text-white outline-none;
 }
 
+.btn-primary:disabled {
+    @apply pointer-events-auto cursor-not-allowed;
+}
+
 .auth-input {
     @apply input input-bordered input-primary w-full rounded-sm focus:outline-none focus:border-2;
 }
 
 .auth-heading {
     @apply text-light-black sm:text-3xl text-2xl text-center text-purple-800;
+}
+
+.error-message {
+    @apply text-xs text-red absolute z-10 left-0 -bottom-4;
 }
 
 @layer base {

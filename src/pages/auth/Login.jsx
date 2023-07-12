@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
-// import CustomInput from "../../components/custom-inputs/CustomInput";
 import { Field, Form, Formik } from "formik";
+import { loginSchema } from "../../schemas";
 const Login = () => {
     const [viewPassword, setViewPassword] = useState(false);
 
@@ -13,21 +13,11 @@ const Login = () => {
         actions.resetForm();
     };
 
-    // const [formData, setFormData] = useState({
-    //     email: "",
-    //     password: "",
-    // });
-
     const initialValues = {
         email: "",
         password: "",
         remember: false,
     };
-
-    // const handleDataChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormData((prev) => ({ ...prev, [name]: value }));
-    // };
 
     return (
         <div className="w-full h-full sm:h-max sm:max-w-md sm:mx-auto rounded-none justify-center gap-4 flex flex-col sm:gap-8 bg-white p-6 sm:p-12 sm:rounded-lg shadow-sm font-semibold">
@@ -35,11 +25,13 @@ const Login = () => {
             <Formik
                 onSubmit={login}
                 initialValues={initialValues}
+                validationSchema={loginSchema}
             >
-                {({ errors, isSubmitting, ...props }) => (
+                {({ errors, isSubmitting, touched, ...props }) => (
                     <Form className="flex flex-col gap-4">
-                        <div>
+                        <div className="relative">
                             {console.log(props.values, "values")}
+                            {console.log(errors, "errors")}
                             <label
                                 className="text-purple-700"
                                 htmlFor="email"
@@ -52,6 +44,9 @@ const Login = () => {
                                 name="email"
                                 className="auth-input"
                             />
+                            {errors.email && touched.email && (
+                                <p className="error-message">{errors.email}</p>
+                            )}
                         </div>
 
                         <div>
@@ -68,6 +63,9 @@ const Login = () => {
                                     name="password"
                                     className="auth-input"
                                 />
+                                {errors.password && touched.password && (
+                                    <p className="error-message">{errors.password}</p>
+                                )}
                                 <div className="absolute right-2 top-[50%] translate-y-[-50%] h-full flex justify-center items-center">
                                     {viewPassword ? (
                                         <button onClick={() => setViewPassword((prev) => !prev)}>
@@ -96,7 +94,9 @@ const Login = () => {
                         <button
                             disabled={isSubmitting || Object.keys(errors).length > 0}
                             type="submit"
-                            className="btn-primary disabled:cursor-not-allowed"
+                            className={`btn-primary ${
+                                isSubmitting || (Object.keys(errors).length > 0 && "not-allowed")
+                            }`}
                         >
                             Login
                         </button>
