@@ -4,6 +4,10 @@ export default {
     mode: "jit",
     theme: {
         extend: {
+            screens: {
+                sm: "480px",
+                md: "980px",
+            },
             colors: {
                 blue: "#2CBCE9",
                 red: "#DC4492",
@@ -13,10 +17,12 @@ export default {
                 "dark-grey": "#757575",
                 "light-black": "rgba(0,0,0,0.35)",
             },
-            fontFamily: {
-                playfair: ["Playfair Display", "serif"],
-                opensans: ["Open Sans", "sans-serif"],
-            },
+            backgroundImage: (theme) => ({
+                "gradient-rainbow":
+                    "linear-gradient(81.66deg, #00b5ee 7.21%, #ff45a4 45.05%, #ffba00 78.07% )",
+                "gradient-rainblue":
+                    "linear-gradient(90.66deg, #24cbff 14.53%, #fc59ff 69.36%, #ffbd0c 117.73% )",
+            }),
         },
     },
     plugins: [require("daisyui")],

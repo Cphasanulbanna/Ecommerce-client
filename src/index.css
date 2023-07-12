@@ -2,4 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap");
+.btn-primary {
+    @apply btn btn-block bg-primary text-white outline-none;
+}
+
+.auth-input {
+    @apply input input-bordered input-primary w-full;
+}
+
+.auth-heading {
+    @apply text-light-black sm:text-3xl text-2xl text-center text-purple-800;
+}
+
+@layer base {
+    body {
+        font-family: "Lato", sans-serif;
+    }
+}
+
+html,
+body,
+.app,
+#root {
+    height: 100%;
+}
+
+* {
+    font-weight: 400;
+}
