@@ -11,3 +11,13 @@ export const loginSchema = yup.object().shape({
         .matches(passwordRules, { message: "Please enter a strong password" })
         .required("Paassword is required"),
 });
+
+export const signupSchema = yup.object().shape({
+    email: yup.string().email("Please enter a valid email").required("Email is required"),
+    password: yup
+        .string()
+        .min(5)
+        .matches(passwordRules, { message: "Please enter a strong password" })
+        .required("Paassword is required"),
+    fullname: yup.string().min(3).required("Fullname is required"),
+});
