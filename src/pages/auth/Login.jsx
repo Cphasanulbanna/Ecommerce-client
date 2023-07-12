@@ -26,6 +26,7 @@ const Login = () => {
                 onSubmit={login}
                 initialValues={initialValues}
                 validationSchema={loginSchema}
+                validateOnMount
             >
                 {({ errors, isSubmitting, touched, ...props }) => (
                     <Form className="flex flex-col gap-4">

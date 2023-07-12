@@ -139,6 +139,15 @@ const Signup = () => {
                         >
                             Signup
                         </button>
+                        <p className="mt-6">
+                            Already have an account?{" "}
+                            <Link
+                                to="/auth/login"
+                                className="text-purple-700"
+                            >
+                                Sign In
+                            </Link>
+                        </p>
                     </Form>
                 )}
             </Formik>
