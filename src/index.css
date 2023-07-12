@@ -8,7 +8,7 @@
 }
 
 .auth-input {
-    @apply input input-bordered input-primary w-full;
+    @apply input input-bordered input-primary w-full rounded-sm focus:outline-none focus:border-2;
 }
 
 .auth-heading {

@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
+    const [viewPassword, setViewPassword] = useState(false);
+
     const signup = async (e) => {
         e.preventDefault();
     };
@@ -14,13 +19,13 @@ const Signup = () => {
                 <div>
                     <label
                         className="text-purple-700"
-                        htmlFor="email"
+                        htmlFor="fullname"
                     >
-                        Email address
+                        Full Name
                     </label>
                     <input
                         type="text"
-                        placeholder="Enter email"
+                        placeholder="Enter fullname"
                         className="auth-input"
                     />
                 </div>
@@ -30,19 +35,57 @@ const Signup = () => {
                         className="text-purple-700"
                         htmlFor="email"
                     >
-                        Password
+                        Email Address
                     </label>
                     <input
                         type="text"
-                        placeholder="Enter password"
+                        placeholder="Enter email"
                         className="auth-input"
+                    />
+                </div>
+                <div>
+                    <label
+                        className="text-purple-700"
+                        htmlFor="email"
+                    >
+                        Password
+                    </label>
+                    <div className="relative">
+                        <input
+                            type={viewPassword ? "text" : "password"}
+                            placeholder="Enter password"
+                            className="auth-input"
+                        />
+                        <div className="absolute right-2 top-[50%] translate-y-[-50%] h-full flex justify-center items-center">
+                            {viewPassword ? (
+                                <button onClick={() => setViewPassword((prev) => !prev)}>
+                                    <AiFillEye size={20} />
+                                </button>
+                            ) : (
+                                <button onClick={() => setViewPassword((prev) => !prev)}>
+                                    <AiFillEyeInvisible size={20} />
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label
+                        className="text-purple-700"
+                        htmlFor="email"
+                    >
+                        Profile picture
+                    </label>
+                    <input
+                        type="file"
+                        className="file-input cursor-pointer h-[unset] focus:outline-none file-input-primary w-full outline-none rounded-sm"
                     />
                 </div>
                 <button
                     type="submmit"
                     className="btn-primary"
                 >
-                    block
+                    Signup
                 </button>
             </form>
         </div>
