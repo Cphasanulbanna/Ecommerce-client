@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+
 import { Link } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
+
 import { loginSchema } from "../../schemas";
+
 import { axiosInstance } from "../../../axiosConfig";
 const Login = () => {
     const [viewPassword, setViewPassword] = useState(false);
@@ -17,11 +20,13 @@ const Login = () => {
                     password: values.password,
                 },
             });
-            console.log(resposne.data);
+
+            if (resposne.data.success === true) {
+                actions.resetForm();
+            }
         } catch (error) {
             console.log(error.message);
         }
-        actions.resetForm();
     };
 
     const initialValues = {
