@@ -5,22 +5,39 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { signupSchema } from "../../schemas";
+import { axiosInstance } from "../../../axiosConfig";
 
 const Signup = () => {
     const [viewPassword, setViewPassword] = useState(false);
     const [preview, setPreview] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const signup = async (values, actions) => {
-        await new Promise((ressolve) => setTimeout(ressolve, 1500));
-        console.log(values, "values");
-        actions.resetForm();
+        try {
+            setIsLoading(true);
+            const response = await axiosInstance("/auth/signup", {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+                method: "POST",
+                data: values,
+            });
+
+            console.log(response.data, "response");
+            actions.resetForm();
+        } catch (error) {
+            console.log("error");
+        } finally {
+            // actions.resetForm();
+            setIsLoading(false);
+        }
     };
 
     const initialValues = {
         email: "",
         password: "",
         fullname: "",
-        profile_pic: "",
+        profile_pic: null,
     };
     return (
         <div className="w-full h-full sm:h-max sm:max-w-md sm:mx-auto rounded-none justify-center gap-4 flex flex-col sm:gap-8 bg-white p-6 sm:p-12 sm:rounded-lg shadow-sm font-semibold">
