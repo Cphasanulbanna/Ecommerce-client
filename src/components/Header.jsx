@@ -5,6 +5,9 @@ import { BsSearch } from "react-icons/bs";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import { AiFillCaretDown } from "react-icons/ai";
+import { FaCartPlus } from "react-icons/fa";
+import { AiFillHeart } from "react-icons/ai";
+import { BsFillPersonFill } from "react-icons/bs";
 
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
@@ -37,17 +40,20 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="sm:w-2/4 mx-auto">
-                    <div className="form-control">
+                    <div className="form-control h-[48px]">
                         <div className="input-group relative">
                             <input
                                 type="text"
                                 placeholder="Search…"
                                 onChange={handleSearch}
                                 value={searchTerm}
-                                className="input input-bordered focus:outline-none w-full"
+                                className="input input-bordered focus:outline-none w-full border-purple-700 h-full"
                             />
-                            <button className="btn btn-square">
-                                <BsSearch size={20} />
+                            <button className="btn btn-square bg-purple-600 h-full">
+                                <BsSearch
+                                    color="#fff"
+                                    size={20}
+                                />
                             </button>
                             {searchedData.length && searchTerm ? (
                                 <div
@@ -92,7 +98,11 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="relative flex justify-between items-center sm:gap-14 md:gap-20 px-16 py-2 mx-auto bg-purple-600 text-white">
+            <div
+                className={`${
+                    viewCategories ? "overflow-visible" : "overflow-hidden"
+                } relative flex justify-between items-center sm:gap-14 md:gap-20 px-16 py-2 mx-auto bg-violet-900 text-white`}
+            >
                 <div className="w-1/4 bg-white text-black rounded-t-sm -mb-2 shadow-md relative">
                     <div
                         onClick={() => setViewCategories((prev) => !prev)}
@@ -137,13 +147,54 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="w-2/4 flex items-center justify-center gap-5">
-                    <ScrollLink>Home</ScrollLink>
-                    <ScrollLink>Best Selling</ScrollLink>
-                    <ScrollLink>Products</ScrollLink>
-                    <ScrollLink>Events</ScrollLink>
-                    <ScrollLink>FAQ</ScrollLink>
+                    <ScrollLink
+                        smooth={true}
+                        spy={true}
+                        to="/"
+                        activeClass={"text-red"}
+                    >
+                        Home
+                    </ScrollLink>
+                    <ScrollLink
+                        smooth={true}
+                        to="/"
+                        activeClass={"text-red"}
+                    >
+                        Best Selling
+                    </ScrollLink>
+                    <ScrollLink
+                        smooth={true}
+                        to="/"
+                        activeClass={"text-red"}
+                    >
+                        Products
+                    </ScrollLink>
+                    <ScrollLink
+                        smooth={true}
+                        to="/"
+                        activeClass={"text-red"}
+                    >
+                        Events
+                    </ScrollLink>
+                    <ScrollLink
+                        smooth={true}
+                        to="/"
+                        activeClass={"text-red"}
+                    >
+                        FAQ
+                    </ScrollLink>
                 </div>
-                <div className="w-1/4 flex items-center gap-3"></div>
+                <div className="w-1/4 flex justify-end items-center gap-3">
+                    <button>
+                        <FaCartPlus size={25} />
+                    </button>
+                    <button>
+                        <AiFillHeart size={25} />
+                    </button>
+                    <button>
+                        <BsFillPersonFill size={25} />
+                    </button>
+                </div>
             </div>
         </header>
     );

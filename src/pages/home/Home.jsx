@@ -5,6 +5,7 @@ const Home = () => {
     return (
         <>
             <Header />
+            <section className="w-full h-full"></section>
         </>
     );
 };
