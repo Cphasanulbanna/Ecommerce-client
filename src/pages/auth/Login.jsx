@@ -4,12 +4,23 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { loginSchema } from "../../schemas";
+import { axiosInstance } from "../../../axiosConfig";
 const Login = () => {
     const [viewPassword, setViewPassword] = useState(false);
 
     const login = async (values, actions) => {
-        await new Promise((ressolve) => setTimeout(ressolve, 1500));
-        console.log(values, "values");
+        try {
+            const resposne = await axiosInstance("/auth/login", {
+                method: "POST",
+                data: {
+                    email: values.email,
+                    password: values.password,
+                },
+            });
+            console.log(resposne.data);
+        } catch (error) {
+            console.log(error.message);
+        }
         actions.resetForm();
     };
 

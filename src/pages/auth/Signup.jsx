@@ -24,7 +24,7 @@ const Signup = () => {
             });
 
             console.log(response.data, "response");
-            actions.resetForm();
+            // actions.resetForm();
         } catch (error) {
             console.log("error");
         } finally {
