@@ -2,12 +2,12 @@ import React from "react";
 
 const BestSelling = () => {
     return (
-        <div
-            id="best-selling"
+        <section
+            id="bestselling"
             className="w-full h-full"
         >
             BestSelling
-        </div>
+        </section>
     );
 };
 

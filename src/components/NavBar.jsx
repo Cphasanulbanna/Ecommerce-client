@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -9,36 +9,20 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { Link as ScrollLink } from "react-scroll";
 
 import { categoriesData } from "../static/data";
+
 import useScrollPosition from "../hooks/useScrollPosition";
 
 const NavBar = () => {
     const [viewCategories, setViewCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
-    const [activeSection, setActiveSection] = useState("");
-    const [fixNavbar, setFixNavbar] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY < 163) {
-                // console.log(window.scrollY, "y");
-                setActiveSection("home");
-            } else {
-                setActiveSection("");
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const isFixed = useScrollPosition(70);
-
-    console.log(isFixed, "fixed");
+    const { scrollPos } = useScrollPosition();
 
     return (
         <div
             className={`${viewCategories ? "overflow-visible" : "overflow-hidden"} ${
-                isFixed ? "fixed z-10 top-0 left-0" : ""
+                scrollPos > 70 ? "fixed z-10 top-0 left-0 right-0" : ""
+            }
             }  flex justify-between items-center sm:gap-14 md:gap-20 px-16 py-2 mx-auto bg-violet-900 text-white`}
         >
             <div className="w-1/4 bg-white text-black rounded-t-sm -mb-2 shadow-md relative">
@@ -90,13 +74,14 @@ const NavBar = () => {
                     spy={true}
                     to="home"
                     activeClass="text-yellow"
-                    className={`text-white ${activeSection === "home" ? "text-yellow" : ""}`}
+                    className={`text-white ${scrollPos < 163 ? "text-yellow" : ""}`}
                 >
                     Home
                 </ScrollLink>
                 <ScrollLink
                     smooth={true}
-                    to="best-selling"
+                    spy={true}
+                    to="bestselling"
                     activeClass="text-yellow"
                     className="text-white"
                 >
