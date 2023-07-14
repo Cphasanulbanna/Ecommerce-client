@@ -23,7 +23,10 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-violet-100">
+        <header
+            id="home"
+            className="bg-violet-100"
+        >
             <div className="flex justify-between items-center sm:gap-14 md:gap-20 py-4 wrapper">
                 <div className="sm:w-1/4">
                     <Link to="/">

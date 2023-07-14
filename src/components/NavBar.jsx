@@ -20,9 +20,9 @@ export const NavBar = () => {
 
     return (
         <nav
-            className={`${viewCategories ? "overflow-visible" : "overflow-hidden"} ${
+            className={`${viewCategories ? "overflow-visible" : ""} ${
                 scrollPos > 70 ? "fixed z-10 top-0 left-0 right-0" : ""
-            }
+            } 
             py-2 bg-violet-900 text-white`}
         >
             <div className=" flex justify-between items-center sm:gap-14 md:gap-20 wrapper">
@@ -47,7 +47,7 @@ export const NavBar = () => {
                             viewCategories
                                 ? "max-h-[65vh] py-4 transition-all duration-500 ease-in-out"
                                 : "py-0  max-h-0"
-                        } bg-white absolute flex flex-col w-full overflow-y-auto text-black shadow-sm rounded-b-sm transition-all duration-500 ease-in-out`}
+                        } bg-white absolute flex flex-col w-full overflow-y-auto text-black shadow-sm rounded-b-sm`}
                     >
                         {categoriesData?.map((category) => (
                             <div
@@ -76,7 +76,6 @@ export const NavBar = () => {
                         to="home"
                         activeClass="text-yellow"
                         className={`text-white ${scrollPos < 143 ? "text-yellow" : ""}`}
-                        onClick={() => window.scrollTo({ top: 70, behavior: "smooth" })}
                     >
                         Home
                     </ScrollLink>
