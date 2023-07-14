@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import AuthRouter from "./AuthRouter";
-import HomePage from "../LandingPage";
+import Homepage from "../../pages/Homepage";
 
 const AppRouter = () => {
     return (
@@ -14,7 +14,7 @@ const AppRouter = () => {
             />
             <Route
                 path="/"
-                element={<HomePage />}
+                element={<Homepage />}
             />
         </Routes>
     );

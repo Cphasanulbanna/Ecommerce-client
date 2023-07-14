@@ -23,22 +23,25 @@ const Header = () => {
     };
 
     return (
-        <header className="">
-            <div className="flex justify-between items-center sm:gap-14 md:gap-20 px-16 py-4 mx-auto">
+        <header className="bg-violet-100">
+            <div className="flex justify-between items-center sm:gap-14 md:gap-20 py-4 wrapper">
                 <div className="sm:w-1/4">
                     <Link to="/">
-                        <PiShoppingCartSimpleFill size={50} />
+                        <PiShoppingCartSimpleFill
+                            className="text-violet-900"
+                            size={50}
+                        />
                     </Link>
                 </div>
                 <div className="sm:w-2/4 mx-auto">
                     <div className="form-control h-[48px]">
-                        <div className="input-group relative">
+                        <div className="input-group relative ">
                             <input
                                 type="text"
                                 placeholder="Search…"
                                 onChange={handleSearch}
                                 value={searchTerm}
-                                className="input input-bordered focus:outline-none w-full border-violet-900 h-full"
+                                className="input input-bordered focus:outline-none w-full border-2 text-violet-900 placeholder:text-violet-900 border-violet-900 h-full bg-violet-100"
                             />
                             <button className="btn btn-square bg-violet-900 hover:bg-purple-800 h-full">
                                 <BsSearch

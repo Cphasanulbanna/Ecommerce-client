@@ -8,6 +8,9 @@ export default {
                 sm: "480px",
                 md: "980px",
             },
+            backgroundImage: {
+                spotlight: "url('/images/spotlight.webp')",
+            },
             colors: {
                 blue: "#2CBCE9",
                 red: "#DC4492",
