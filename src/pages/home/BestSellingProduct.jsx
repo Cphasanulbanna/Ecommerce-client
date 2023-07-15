@@ -5,16 +5,13 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 
 import StarRatings from "react-star-ratings";
-import useMediaQuery from "../../hooks/useMediaQuery";
 
 const BestSellingProduct = ({ product }) => {
-    const screenSize = useMediaQuery();
-
-    console.log(screenSize, "screensize");
     return (
         <div
+            id="best-selling-product"
             key={product?.id}
-            className="flex flex-col gap-3 p-3 rounded-md overflow-hidden shadow-md bg-white"
+            className="flex flex-col gap-3 p-3 overflow-hidden bg-white rounded-md shadow-md"
         >
             <div className="flex gap-3">
                 <div className="w-5/6 aspect-square max-h-[120px]">
@@ -24,7 +21,7 @@ const BestSellingProduct = ({ product }) => {
                         className="object-contain object-center"
                     />
                 </div>
-                <div className="w-1/6 flex justify-end flex-wrap gap-2 h-max">
+                <div className="flex flex-wrap justify-end w-1/6 gap-2 h-max">
                     <button>
                         <AiOutlineHeart size={22} />
                     </button>
@@ -36,7 +33,7 @@ const BestSellingProduct = ({ product }) => {
                     </button>
                 </div>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-1 md:gap-2 sm:gap-4">
                 <h3 className="text-sky-700">{product?.shop?.name}</h3>
                 <p className="line-clamp-2">{product?.name}</p>
                 <StarRatings
@@ -44,8 +41,9 @@ const BestSellingProduct = ({ product }) => {
                     starRatedColor="orange"
                     numberOfStars={5}
                     name="rating"
-                    starDimension={18}
-                    starSpacing={2}
+                    id="best-selling-product-rating"
+                    // starDimension={screenSize < 480 ? 18 : 25}
+                    // starSpacing={screenSize < 480 ? 2 : 3}
                 />
             </div>
         </div>
