@@ -5,7 +5,7 @@ const useMediaQuery = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setScreenSize(document.body.clientWidth);
+            setScreenSize(window.innerWidth);
         };
 
         window.addEventListener("resize", handleResize);

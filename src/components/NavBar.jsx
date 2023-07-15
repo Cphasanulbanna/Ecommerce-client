@@ -25,15 +25,15 @@ export const NavBar = () => {
             } 
             py-2 bg-violet-900 text-white`}
         >
-            <div className=" flex justify-between items-center sm:gap-14 md:gap-20 wrapper">
-                <div className="w-1/4 bg-white text-black rounded-t-sm -mb-2 shadow-md relative">
+            <div className="flex items-center justify-between  sm:gap-14 md:gap-20 wrapper">
+                <div className="relative w-1/4 -mb-2 text-black bg-white rounded-t-sm shadow-md">
                     <div
                         onClick={() => setViewCategories((prev) => !prev)}
                         className="flex items-center p-3 cursor-pointer"
                     >
                         <BiSolidCategoryAlt
                             size={30}
-                            className="text-violet-900 mr-3"
+                            className="mr-3 text-violet-900"
                         />
                         <h2>{selectedCategory ? selectedCategory : "All categories"}</h2>
                         <AiFillCaretDown
@@ -51,6 +51,7 @@ export const NavBar = () => {
                     >
                         {categoriesData?.map((category) => (
                             <div
+                                key={category.id}
                                 onClick={() => {
                                     setSelectedCategory(category.title);
                                     setViewCategories(false);
@@ -69,7 +70,7 @@ export const NavBar = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-2/4 flex items-center justify-center gap-5">
+                <div className="flex items-center justify-center w-2/4 gap-5">
                     <ScrollLink
                         smooth={true}
                         spy={true}
@@ -113,7 +114,7 @@ export const NavBar = () => {
                         FAQ
                     </ScrollLink>
                 </div>
-                <div className="w-1/4 flex justify-end items-center gap-5">
+                <div className="flex items-center justify-end w-1/4 gap-5">
                     <button className="relative">
                         <FaCartPlus size={25} />
                         <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">

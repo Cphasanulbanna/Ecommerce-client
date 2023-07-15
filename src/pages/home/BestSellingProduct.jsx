@@ -42,8 +42,6 @@ const BestSellingProduct = ({ product }) => {
                     numberOfStars={5}
                     name="rating"
                     id="best-selling-product-rating"
-                    // starDimension={screenSize < 480 ? 18 : 25}
-                    // starSpacing={screenSize < 480 ? 2 : 3}
                 />
             </div>
         </div>

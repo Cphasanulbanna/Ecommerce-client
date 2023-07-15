@@ -13,12 +13,17 @@ const TopSold = () => {
         setProducts(sortedProducts);
     }, []);
     return (
-        <div className="bg-violet-100 py-8">
+        <div className="py-8 bg-violet-100">
             <div className="wrapper">
-                <h1 className="font-bold mb-6 text-2xl">Best Deals</h1>
+                <h1 className="mb-6 text-2xl font-bold">Best Deals</h1>
                 <div className="grid grid-cols-2 gap-3 sm:gap-3 md:gap-5 md:grid-cols-4 lg:grid-cols-5">
                     {products &&
-                        products?.map((product) => <BestSellingProduct product={product} />)}
+                        products?.map((product) => (
+                            <BestSellingProduct
+                                key={product.name}
+                                product={product}
+                            />
+                        ))}
                 </div>
             </div>
         </div>

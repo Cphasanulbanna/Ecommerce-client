@@ -27,7 +27,7 @@ const Header = () => {
             id="home"
             className="bg-violet-100"
         >
-            <div className="flex justify-between items-center sm:gap-14 md:gap-20 py-4 wrapper">
+            <div className="flex items-center justify-between py-4 sm:gap-14 md:gap-20 wrapper">
                 <div className="sm:w-1/4">
                     <Link to="/">
                         <PiShoppingCartSimpleFill
@@ -36,17 +36,17 @@ const Header = () => {
                         />
                     </Link>
                 </div>
-                <div className="sm:w-2/4 mx-auto">
+                <div className="mx-auto sm:w-2/4">
                     <div className="form-control h-[48px]">
-                        <div className="input-group relative ">
+                        <div className="relative input-group ">
                             <input
                                 type="text"
                                 placeholder="Search…"
                                 onChange={handleSearch}
                                 value={searchTerm}
-                                className="input input-bordered focus:outline-none w-full border-2 text-violet-900 placeholder:text-violet-900 border-violet-900 h-full bg-violet-100"
+                                className="w-full h-full border-2 input input-bordered focus:outline-none text-violet-900 placeholder:text-violet-900 border-violet-900 bg-violet-100"
                             />
-                            <button className="btn btn-square bg-violet-900 hover:bg-purple-800 h-full">
+                            <button className="h-full btn btn-square bg-violet-900 hover:bg-purple-800">
                                 <BsSearch
                                     color="#fff"
                                     size={20}
@@ -57,7 +57,7 @@ const Header = () => {
                                     className={`absolute top-[50px] w-full bg-slate-50 shadow-sm z-10`}
                                 >
                                     {searchTerm &&
-                                        searchedData?.map((product, index) => {
+                                        searchedData?.map((product) => {
                                             const productName = product.name;
                                             const modifiedProductName = productName.replace(
                                                 /\+/g,
@@ -69,7 +69,7 @@ const Header = () => {
                                                     key={product.id}
                                                     to={`/product/${modifiedProductName}`}
                                                 >
-                                                    <div className="w-full flex items-start py-3">
+                                                    <div className="flex items-start w-full py-3">
                                                         <div className="w-[40px] h-[40px] mr-4">
                                                             <img
                                                                 src={product.image_Url[0].url}
@@ -88,8 +88,8 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div className="sm:w-1/4 flex justify-end">
-                    <button className="btn bg-violet-900 hover:bg-purple-800 text-white">
+                <div className="flex justify-end sm:w-1/4">
+                    <button className="text-white btn bg-violet-900 hover:bg-purple-800">
                         <span>Become a seller</span> <BiRightArrowAlt size={22} />
                     </button>
                 </div>

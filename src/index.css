@@ -37,6 +37,7 @@
     }
 }
 
+/* GENERAL */
 html,
 body,
 .app,
@@ -75,6 +76,7 @@ button {
     cursor: pointer;
 }
 
+/* BEST DEAL SECTION => STAR RATING */
 #best-selling-product .star-ratings .star-container svg {
     width: 25px !important;
     height: 25px !important;
@@ -84,6 +86,7 @@ button {
 }
 
 @media all and (max-width: 480px) {
+    /* BEST DEAL SECTION => STAR RATING */
     #best-selling-product .star-ratings .star-container svg {
         width: 18px !important;
         height: 18px !important;
