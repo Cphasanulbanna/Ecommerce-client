@@ -5,8 +5,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 
 import StarRatings from "react-star-ratings";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const BestSellingProduct = ({ product }) => {
+    const screenSize = useMediaQuery();
+
+    console.log(screenSize, "screensize");
     return (
         <div
             key={product?.id}
