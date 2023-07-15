@@ -24,7 +24,7 @@
 }
 
 .wrapper {
-    @apply sm:mx-auto sm:max-w-[1440px] sm:w-[90%] w-[90%];
+    @apply mx-auto sm:max-w-[1440px] sm:w-[90%] w-[90%];
 }
 
 .home {
