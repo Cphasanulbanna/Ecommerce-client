@@ -103,7 +103,7 @@ export const brandingData = [
         ),
     },
     {
-        id: 4,
+        id: 3,
         title: "Affortable Prices",
         Description: "Get Factory direct price",
         icon: (
@@ -150,7 +150,7 @@ export const brandingData = [
         ),
     },
     {
-        id: 5,
+        id: 4,
         title: "Secure Payments",
         Description: "100% protected payments",
         icon: (
