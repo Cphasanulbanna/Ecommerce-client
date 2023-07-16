@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { MdArrowForwardIos } from "react-icons/md";
 
 const FAQ = () => {
     const [clickedId, setClickedId] = useState(null);
+
     const [faqs] = useState([
         {
             id: 1,
@@ -21,8 +22,16 @@ const FAQ = () => {
             answer: " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint earum similique itaque",
         },
     ]);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
     return (
-        <section className="py-8 bg-violet-100 sm:py-16">
+        <section
+            data-section
+            id="faq"
+            className="py-8 bg-violet-100 sm:py-16"
+        >
             <div className="wrapper">
                 <h1 className="mb-8 font-bold sm:text-3xl">FAQ</h1>
                 <div className="flex flex-col gap-6">

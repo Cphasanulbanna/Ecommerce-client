@@ -13,7 +13,7 @@ const BestSelling = () => {
         setProducts(sortedProducts);
     }, []);
     return (
-        <div
+        <section
             id="bestselling"
             className="py-8 lg:py-16 bg-violet-100"
         >
@@ -29,7 +29,7 @@ const BestSelling = () => {
                         ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

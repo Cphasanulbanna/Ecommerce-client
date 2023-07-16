@@ -2,10 +2,10 @@ import React from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const SpecialOffer = () => {
+const Events = () => {
     return (
-        <div
-            id="specialoffer"
+        <section
+            id="events"
             className="py-8 lg:py-16 bg-violet-100"
         >
             <div className="flex items-center justify-between p-12 overflow-hidden bg-white rounded-md shadow-md wrapper">
@@ -46,8 +46,8 @@ const SpecialOffer = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
-export default SpecialOffer;
+export default Events;

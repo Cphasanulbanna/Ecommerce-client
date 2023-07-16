@@ -6,11 +6,11 @@ import { FaShopify } from "react-icons/fa";
 const Home = () => {
     return (
         <section
-            className="home bg-violet-100"
             id="home"
+            className="h-full home bg-violet-100"
         >
-            <section className="wrapper flex justify-between">
-                <div className="flex flex-col justify-center gap-4 w-3/5">
+            <section className="flex justify-between h-full wrapper">
+                <div className="flex flex-col justify-center w-3/5 gap-4">
                     <h1 className="text-5xl font-bold">
                         Best Collection For <br />
                         Home Decoration
@@ -20,7 +20,7 @@ const Home = () => {
                         suscipit eos debitis consectetur iste minus? Nobis in dicta aut impedit,
                         laudantium fugiat esse quaerat. Et libero harum voluptate cupiditate!
                     </p>
-                    <button className="btn bg-violet-900 hover:bg-purple-800 text-white w-max">
+                    <button className="text-white btn bg-violet-900 hover:bg-purple-800 w-max">
                         <span className="">Shop Now</span>
                         <FaShopify size={20} />
                     </button>

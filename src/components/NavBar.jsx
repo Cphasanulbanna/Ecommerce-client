@@ -6,20 +6,24 @@ import { FaCartPlus } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 
-import { Link as ScrollLink } from "react-scroll";
-
 import { categoriesData } from "../static/data";
 
 import useScrollPosition from "../hooks/useScrollPosition";
-import { useNavigate } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
+import useSectionReached from "../hooks/useSectionReached";
 
 export const NavBar = () => {
     const [viewCategories, setViewCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
 
-    const navigate = useNavigate();
-
     const { scrollPos } = useScrollPosition();
+    const { pathname, hash } = useLocation();
+
+    const id = useSectionReached();
+    console.log(id, "++++");
+    console.log(scrollPos, "scrollPos");
 
     return (
         <nav
@@ -74,54 +78,61 @@ export const NavBar = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center w-2/4 gap-5">
-                    <ScrollLink
+                    <NavHashLink
+                        to="/#home"
                         smooth={true}
-                        spy={true}
-                        to="home"
-                        activeClass="text-yellow"
-                        className={`text-white ${scrollPos < 143 ? "text-yellow" : ""}`}
+                        className={
+                            (`${pathname}${hash}` === "/#home" && !id) ||
+                            (scrollPos === 0 && `${pathname}${hash}` === "/#home" && !id) ||
+                            (scrollPos === 0 && !id && pathname === "/")
+                                ? "text-yellow"
+                                : ""
+                        }
                     >
                         Home
-                    </ScrollLink>
-                    <ScrollLink
+                    </NavHashLink>
+                    <NavHashLink
                         smooth={true}
-                        spy={true}
-                        to="bestselling"
-                        activeClass="text-yellow"
-                        className="text-white"
-                        offset={-120}
+                        className={
+                            (`${pathname}${hash}` === "/#bestselling" &&
+                                scrollPos < 170 &&
+                                id !== "events" &&
+                                id) ||
+                            (id === "bestselling" && id !== "events" && id !== "")
+                                ? "text-yellow"
+                                : ""
+                        }
+                        to="/#bestselling"
                     >
                         Best Selling
-                    </ScrollLink>
-                    <ScrollLink
+                    </NavHashLink>
+
+                    <NavHashLink
+                        to="/#events"
                         smooth={true}
-                        spy={true}
-                        to="products"
-                        activeClass="text-yellow"
-                        className="text-white"
-                        offset={-120}
-                    >
-                        Products
-                    </ScrollLink>
-                    <ScrollLink
-                        smooth={true}
-                        spy={true}
-                        to="specialoffer"
-                        activeClass="text-yellow"
-                        className="text-white"
-                        offset={-120}
+                        className={
+                            (`${pathname}${hash}` === "/#events" &&
+                                scrollPos !== 0 &&
+                                id !== "bestselling") ||
+                            (id === "events" && id !== "bestselling")
+                                ? "text-yellow"
+                                : ""
+                        }
                     >
                         Events
-                    </ScrollLink>
-                    <ScrollLink
-                        smooth={true}
-                        to="faq"
-                        activeClass="text-yellow"
-                        className="text-white"
-                        onClick={() => navigate("/faq")}
+                    </NavHashLink>
+                    <NavHashLink
+                        className={pathname === "/products" ? "text-yellow" : ""}
+                        to="/products"
+                    >
+                        Products
+                    </NavHashLink>
+                    <NavHashLink
+                        to="/faq"
+                        className={pathname === "/faq" ? "text-yellow" : ""}
                     >
                         FAQ
-                    </ScrollLink>
+                    </NavHashLink>
                 </div>
                 <div className="flex items-center justify-end w-1/4 gap-5">
                     <button className="relative">

@@ -58,7 +58,6 @@ body,
 }
 
 body {
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
@@ -75,7 +74,7 @@ body {
 
 section {
     width: 100%;
-    height: 100%;
+    scroll-margin: 170px;
 }
 
 img {
@@ -107,4 +106,8 @@ button {
     #best-selling-product .star-ratings .star-container {
         padding: 0 2px !important;
     }
+}
+
+.text-yellow {
+    color: yellow;
 }
