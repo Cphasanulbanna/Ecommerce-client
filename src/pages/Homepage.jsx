@@ -8,6 +8,7 @@ import Branding from "./home/Branding";
 import Categories from "./home/Categories";
 import TopSold from "./home/TopSold";
 import SpecialOffer from "./home/SpecialOffer";
+import FeaturedProducts from "./home/FeaturedProduct";
 
 const Homepage = () => {
     return (
@@ -19,6 +20,7 @@ const Homepage = () => {
             <Categories />
             <TopSold />
             <SpecialOffer />
+            <FeaturedProducts />
             <BestSelling />
         </>
     );
