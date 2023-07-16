@@ -21,11 +21,11 @@ export const NavBar = () => {
     return (
         <nav
             className={`${viewCategories ? "overflow-visible" : ""} ${
-                scrollPos > 70 ? "fixed z-10 top-0 left-0 right-0" : ""
+                scrollPos > 70 ? "fixed z-30 top-0 left-0 right-0" : ""
             } 
             py-2 bg-violet-900 text-white`}
         >
-            <div className="flex items-center justify-between  sm:gap-14 md:gap-20 wrapper">
+            <div className="flex items-center justify-between sm:gap-14 md:gap-20 wrapper">
                 <div className="relative w-1/4 -mb-2 text-black bg-white rounded-t-sm shadow-md">
                     <div
                         onClick={() => setViewCategories((prev) => !prev)}

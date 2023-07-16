@@ -10,6 +10,7 @@ import TopSold from "./home/TopSold";
 import SpecialOffer from "./home/SpecialOffer";
 import FeaturedProducts from "./home/FeaturedProduct";
 import Subscribe from "./home/Subscribe";
+import Footer from "../components/Footer";
 
 const Homepage = () => {
     return (
@@ -23,6 +24,7 @@ const Homepage = () => {
             <SpecialOffer />
             <FeaturedProducts />
             <Subscribe />
+            <Footer />
             <BestSelling />
         </>
     );
