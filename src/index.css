@@ -31,6 +31,10 @@
     @apply sm:h-[calc(100%-142px)];
 }
 
+.btn-main {
+    @apply font-normal text-white border-none w-max bg-violet-900 hover:bg-purple-800;
+}
+
 @layer base {
     body {
         font-family: "Lato", sans-serif;
