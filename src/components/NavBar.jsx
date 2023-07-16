@@ -11,10 +11,13 @@ import { Link as ScrollLink } from "react-scroll";
 import { categoriesData } from "../static/data";
 
 import useScrollPosition from "../hooks/useScrollPosition";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
     const [viewCategories, setViewCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
+
+    const navigate = useNavigate();
 
     const { scrollPos } = useScrollPosition();
 
@@ -47,7 +50,7 @@ export const NavBar = () => {
                             viewCategories
                                 ? "max-h-[65vh] py-4 transition-all duration-500 ease-in-out"
                                 : "py-0  max-h-0"
-                        } bg-white absolute flex flex-col w-full overflow-y-auto text-black shadow-sm rounded-b-sm`}
+                        } bg-white absolute z-40 flex flex-col w-full overflow-y-auto text-black shadow-sm rounded-b-sm`}
                     >
                         {categoriesData?.map((category) => (
                             <div
@@ -86,22 +89,27 @@ export const NavBar = () => {
                         to="bestselling"
                         activeClass="text-yellow"
                         className="text-white"
+                        offset={-120}
                     >
                         Best Selling
                     </ScrollLink>
                     <ScrollLink
                         smooth={true}
+                        spy={true}
                         to="products"
                         activeClass="text-yellow"
                         className="text-white"
+                        offset={-120}
                     >
                         Products
                     </ScrollLink>
                     <ScrollLink
                         smooth={true}
-                        to="events"
+                        spy={true}
+                        to="specialoffer"
                         activeClass="text-yellow"
                         className="text-white"
+                        offset={-120}
                     >
                         Events
                     </ScrollLink>
@@ -110,6 +118,7 @@ export const NavBar = () => {
                         to="faq"
                         activeClass="text-yellow"
                         className="text-white"
+                        onClick={() => navigate("/faq")}
                     >
                         FAQ
                     </ScrollLink>

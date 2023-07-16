@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
         setProducts(sortedProducts);
     }, []);
     return (
-        <div className="py-8 bg-violet-100">
+        <div className="py-8 lg:py-16 bg-violet-100">
             <div className="wrapper">
                 <h1 className="mb-6 text-2xl font-bold">Featured Products</h1>
                 <div className="grid grid-cols-2 gap-3 sm:gap-3 md:gap-5 md:grid-cols-4 lg:grid-cols-5">

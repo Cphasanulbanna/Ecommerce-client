@@ -4,7 +4,10 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const SpecialOffer = () => {
     return (
-        <div className="py-8 bg-violet-100">
+        <div
+            id="specialoffer"
+            className="py-8 lg:py-16 bg-violet-100"
+        >
             <div className="flex items-center justify-between p-12 overflow-hidden bg-white rounded-md shadow-md wrapper">
                 <div className="w-1/2">
                     <img
