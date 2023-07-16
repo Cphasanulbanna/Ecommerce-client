@@ -23,13 +23,22 @@ const BestSellingProduct = ({ product }) => {
                 </div>
                 <div className="flex flex-wrap justify-end w-1/6 gap-2 h-max">
                     <button>
-                        <AiOutlineHeart size={22} />
+                        <AiOutlineHeart
+                            title="Add to wishlist"
+                            size={22}
+                        />
                     </button>
                     <button>
-                        <AiOutlineShoppingCart size={22} />
+                        <AiOutlineShoppingCart
+                            title="Add to cart"
+                            size={22}
+                        />
                     </button>
                     <button>
-                        <AiOutlineEye size={22} />
+                        <AiOutlineEye
+                            title="View product"
+                            size={22}
+                        />
                     </button>
                 </div>
             </div>
@@ -43,6 +52,17 @@ const BestSellingProduct = ({ product }) => {
                     name="rating"
                     id="best-selling-product-rating"
                 />
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                        <h5 className="relative font-bold">
+                            {product?.price}$
+                            <small className="absolute top-0 z-10 ml-1 line-through text-red">
+                                {product?.discount_price}
+                            </small>
+                        </h5>
+                    </div>
+                    <p className="text-green-500">{product?.total_sell} sold</p>
+                </div>
             </div>
         </div>
     );

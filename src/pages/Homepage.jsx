@@ -7,6 +7,7 @@ import { NavBar } from "../components/NavBar";
 import Branding from "./home/Branding";
 import Categories from "./home/Categories";
 import TopSold from "./home/TopSold";
+import SpecialOffer from "./home/SpecialOffer";
 
 const Homepage = () => {
     return (
@@ -17,6 +18,7 @@ const Homepage = () => {
             <Branding />
             <Categories />
             <TopSold />
+            <SpecialOffer />
             <BestSelling />
         </>
     );
