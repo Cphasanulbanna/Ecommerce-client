@@ -11,6 +11,7 @@ import { productData } from "../static/data";
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchedData, setSearchedData] = useState([]);
+    const [viewDropdown, setDropDown] = useState(false);
 
     const handleSearch = (e) => {
         const { value } = e.target;
@@ -18,7 +19,9 @@ const Header = () => {
 
         const filteredProducts =
             productData &&
-            productData.filter((product) => product.name.toLowerCase().includes(searchTerm));
+            productData.filter((product) =>
+                product.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+            );
         setSearchedData(filteredProducts);
     };
 
@@ -57,14 +60,15 @@ const Header = () => {
                                         searchedData?.map((product) => {
                                             const productName = product.name;
                                             const modifiedProductName = productName.replace(
-                                                /\+/g,
+                                                /\s+/g,
                                                 "-"
                                             );
 
                                             return (
                                                 <Link
+                                                    onClick={() => setSearchTerm("")}
                                                     key={product.id}
-                                                    to={`/products/${modifiedProductName}`}
+                                                    to={`/product/${modifiedProductName}`}
                                                 >
                                                     <div className="flex items-start w-full py-3">
                                                         <div className="w-[40px] h-[40px] mr-4">
