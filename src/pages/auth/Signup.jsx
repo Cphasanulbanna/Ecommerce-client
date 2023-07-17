@@ -23,7 +23,6 @@ const Signup = () => {
                 data: values,
             });
 
-            console.log(response.data, "response");
             // actions.resetForm();
         } catch (error) {
             console.log("error");
@@ -40,7 +39,7 @@ const Signup = () => {
         profile_pic: null,
     };
     return (
-        <div className="w-full h-full sm:h-max sm:max-w-md sm:mx-auto rounded-none justify-center gap-4 flex flex-col sm:gap-8 bg-white p-6 sm:p-12 sm:rounded-lg shadow-sm font-semibold">
+        <div className="flex flex-col justify-center w-full h-full gap-4 p-6 font-semibold bg-white rounded-none shadow-sm sm:h-max sm:max-w-md sm:mx-auto sm:gap-8 sm:p-12 sm:rounded-lg">
             <h1 className="auth-heading">Signup to your account</h1>
             <Formik
                 initialValues={initialValues}
@@ -123,7 +122,7 @@ const Signup = () => {
                             >
                                 Profile picture
                             </label>
-                            <div className="flex flex-row-reverse items-center border-1 border-purple-800 border-solid">
+                            <div className="flex flex-row-reverse items-center border-purple-800 border-solid border-1">
                                 <div className="border-[1px] border-l-0 border-solid border-purple-800 ">
                                     {values?.profile_pic ? (
                                         <img

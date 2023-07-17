@@ -36,7 +36,7 @@ const Login = () => {
     };
 
     return (
-        <div className="w-full h-full sm:h-max sm:max-w-md sm:mx-auto rounded-none justify-center gap-4 flex flex-col sm:gap-8 bg-white p-6 sm:p-12 sm:rounded-lg shadow-sm font-semibold">
+        <div className="flex flex-col justify-center w-full h-full gap-4 p-6 font-semibold bg-white rounded-none shadow-sm sm:h-max sm:max-w-md sm:mx-auto sm:gap-8 sm:p-12 sm:rounded-lg">
             <h1 className="auth-heading">Login to your account</h1>
             <Formik
                 onSubmit={login}
@@ -47,8 +47,6 @@ const Login = () => {
                 {({ errors, isSubmitting, touched, ...props }) => (
                     <Form className="flex flex-col gap-4">
                         <div className="relative">
-                            {console.log(props.values, "values")}
-                            {console.log(errors, "errors")}
                             <label
                                 className="text-purple-700"
                                 htmlFor="email"
@@ -96,13 +94,13 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                                 <Field
                                     id="remember"
                                     type="checkbox"
                                     name="remember"
-                                    className="checkbox checkbox-primary rounded-sm"
+                                    className="rounded-sm checkbox checkbox-primary"
                                 />
                                 <label htmlFor="remember">Remember me</label>
                             </div>

@@ -3,51 +3,26 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import AuthRouter from "./AuthRouter";
-import Homepage from "../../pages/Homepage";
-import FAQ from "../../pages/FAQ";
-import Header from "../Header";
-import { NavBar } from "../NavBar";
-import ProductsPage from "../../pages/ProductsPage";
-import ProductsDetailsPage from "../../pages/ProductsDetailsPage";
-import BestSellingPage from "../../pages/BestSellingPage";
-import EventsPage from "../../pages/home/EventsPage";
+import ProductRouter from "./ProductRouter";
+import HomeRouter from "./HomeRouter";
 
 const AppRouter = () => {
     return (
-        <>
-            <Header />
-            <NavBar />
-            <Routes>
-                <Route
-                    path="/auth/*"
-                    element={<AuthRouter />}
-                />
-                <Route
-                    path="/"
-                    element={<Homepage />}
-                />
-                <Route
-                    path="/faq"
-                    element={<FAQ />}
-                />
-                <Route
-                    path="/products"
-                    element={<ProductsPage />}
-                />
-                <Route
-                    path="/product/:id"
-                    element={<ProductsDetailsPage />}
-                />
-                <Route
-                    path="/best-selling"
-                    element={<BestSellingPage />}
-                />
-                <Route
-                    path="/events"
-                    element={<EventsPage />}
-                />
-            </Routes>
-        </>
+        <Routes>
+            <Route
+                path="/auth/*"
+                element={<AuthRouter />}
+            />
+
+            <Route
+                path="/products/*"
+                element={<ProductRouter />}
+            />
+            <Route
+                path="/*"
+                element={<HomeRouter />}
+            />
+        </Routes>
     );
 };
 

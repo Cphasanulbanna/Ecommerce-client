@@ -26,8 +26,6 @@ const Header = () => {
         setSearchedData(filteredProducts);
     }, [searchTerm]);
 
-    console.log(searchedData, "data");
-
     return (
         <header className="bg-violet-100">
             <div className="flex items-center justify-between py-4 sm:gap-14 md:gap-20 wrapper">
@@ -67,14 +65,11 @@ const Header = () => {
                                                 "-"
                                             );
 
-                                            console.log(productName, "product name");
-                                            console.log(modifiedProductName, "modified name");
-
                                             return (
                                                 <Link
-                                                    // onClick={() => setSearchTerm("")}
+                                                    onClick={() => setSearchTerm("")}
                                                     key={product.id}
-                                                    to={`/product/${modifiedProductName}`}
+                                                    to={`/products/${modifiedProductName}`}
                                                 >
                                                     <div className="flex items-start w-full py-3">
                                                         <div className="w-[40px] h-[40px] mr-4">

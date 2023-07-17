@@ -1,22 +1,18 @@
 import React from "react";
-import { Link } from "react-scroll";
 
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <footer className="bg-deep-blue">
             <div className="grid grid-cols-2 gap-3 py-8 lg:grid-cols-4 wrapper lg:py-16 text-slate-500">
                 <div className="flex flex-col gap-4">
-                    <Link
-                        to="home"
-                        smooth={true}
-                        spy={true}
-                    >
+                    <Link to="/">
                         <PiShoppingCartSimpleFill
                             className="text-slate-300"
                             size={50}

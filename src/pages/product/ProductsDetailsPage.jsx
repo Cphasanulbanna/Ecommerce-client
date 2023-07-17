@@ -1,6 +1,6 @@
 import React from "react";
 
-import { productData } from "../static/data";
+import { productData } from "../../static/data";
 
 import { AiOutlineMessage } from "react-icons/ai";
 import { FaCartPlus } from "react-icons/fa";
