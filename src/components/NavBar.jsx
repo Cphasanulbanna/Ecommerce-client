@@ -11,6 +11,7 @@ import { categoriesData } from "../static/data";
 import { NavLink, useNavigate } from "react-router-dom";
 import Cart from "../pages/product/Cart";
 import useOutsideClick from "../hooks/useOutsideclick";
+import useOutsideScroll from "../hooks/useOutsideScroll";
 
 export const NavBar = () => {
     const [opencategories, setOpenCategories] = useState(false);
@@ -18,7 +19,6 @@ export const NavBar = () => {
     const [openCart, setOpenCart] = useState(false);
 
     const dropdownRef = useRef(null);
-    const parentRef = useRef(null);
 
     const navigate = useNavigate();
 
@@ -37,6 +37,7 @@ export const NavBar = () => {
     console.log(dropdownRef, "red");
 
     useOutsideClick(dropdownRef, null, () => setOpenCategories(false));
+    useOutsideScroll(openCart);
 
     return (
         <>
