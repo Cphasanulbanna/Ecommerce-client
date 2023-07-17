@@ -8,14 +8,23 @@ import { BsFillPersonFill } from "react-icons/bs";
 
 import { categoriesData } from "../static/data";
 
-import useScrollPosition from "../hooks/useScrollPosition";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
     const [viewCategories, setViewCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
 
-    const { scrollPos } = useScrollPosition();
+    const navigate = useNavigate();
+
+    const filterProductsByCategory = (category) => {
+        try {
+            category && navigate(`/products?category=${category}`);
+            setSelectedCategory(category.title);
+            setViewCategories(false);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <nav
@@ -49,10 +58,7 @@ export const NavBar = () => {
                         {categoriesData?.map((category) => (
                             <div
                                 key={category.id}
-                                onClick={() => {
-                                    setSelectedCategory(category.title);
-                                    setViewCategories(false);
-                                }}
+                                onClick={() => filterProductsByCategory(category?.title)}
                                 className="flex items-center gap-2 relative sm:before:absolute sm:before:w-full sm:before:h-full sm:before:inset-0 sm:before:hover:bg-slate-100 sm:before:opacity-[0.5] cursor-pointer"
                             >
                                 <div className="w-[50px] h-[50px]">
