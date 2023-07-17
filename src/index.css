@@ -26,6 +26,9 @@
 .wrapper {
     @apply mx-auto sm:max-w-[1440px] sm:w-[90%] w-[90%];
 }
+.wrapper-secondary {
+    @apply mx-auto sm:max-w-[1440px] sm:w-[70%] w-[90%];
+}
 
 .home {
     @apply sm:h-[calc(100%-142px)];
@@ -59,6 +62,7 @@ body,
 
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {

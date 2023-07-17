@@ -8,6 +8,7 @@ import FAQ from "../../pages/FAQ";
 import Header from "../Header";
 import { NavBar } from "../NavBar";
 import ProductsPage from "../../pages/ProductsPage";
+import ProductsDetailsPage from "../../pages/ProductsDetailsPage";
 
 const AppRouter = () => {
     return (
@@ -30,6 +31,10 @@ const AppRouter = () => {
                 <Route
                     path="/products"
                     element={<ProductsPage />}
+                />
+                <Route
+                    path="/products/:id"
+                    element={<ProductsDetailsPage />}
                 />
             </Routes>
         </>
