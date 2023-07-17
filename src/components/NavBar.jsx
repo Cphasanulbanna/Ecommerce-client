@@ -9,7 +9,9 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { categoriesData } from "../static/data";
 
 import { NavLink, useNavigate } from "react-router-dom";
+
 import Cart from "../pages/product/Cart";
+
 import useOutsideClick from "../hooks/useOutsideclick";
 import useOutsideScroll from "../hooks/useOutsideScroll";
 
@@ -33,8 +35,6 @@ export const NavBar = () => {
     const closeCart = () => {
         setOpenCart(false);
     };
-
-    console.log(dropdownRef, "red");
 
     useOutsideClick(dropdownRef, null, () => setOpenCategories(false));
     useOutsideScroll(openCart);

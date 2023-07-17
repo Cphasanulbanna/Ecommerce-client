@@ -8,6 +8,8 @@ import { MdRemoveCircle } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Overlay from "../../components/general/Overlay";
 
+import { cartAnimation } from "../../assets/animations/animations";
+
 const Cart = ({ openCart, closeCart }) => {
     const [cart] = useState([
         { id: 1, name: "Product 1", quantity: 1, price: 100 },
@@ -15,26 +17,6 @@ const Cart = ({ openCart, closeCart }) => {
         { id: 3, name: "Product 3", quantity: 1, price: 200 },
     ]);
 
-    const cartAnimation = {
-        hidden: {
-            x: "100%",
-            opacity: 0.7,
-        },
-        visible: {
-            x: "0%",
-            opacity: 1,
-            transition: {
-                duration: 0.4,
-                type: "spring",
-                damping: 25,
-                stiffness: 200,
-            },
-        },
-        exit: {
-            x: "100%",
-            opacity: 0,
-        },
-    };
     return (
         <Overlay onClick={closeCart}>
             <motion.div
