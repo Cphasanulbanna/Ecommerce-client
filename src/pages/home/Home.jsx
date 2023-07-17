@@ -5,10 +5,7 @@ import { FaShopify } from "react-icons/fa";
 
 const Home = () => {
     return (
-        <section
-            id="home"
-            className="h-full home bg-violet-100"
-        >
+        <section className="h-full home bg-violet-100">
             <section className="flex justify-between h-full wrapper">
                 <div className="flex flex-col justify-center w-3/5 gap-4">
                     <h1 className="text-5xl font-bold">

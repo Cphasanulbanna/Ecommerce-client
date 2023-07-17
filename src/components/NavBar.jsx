@@ -9,21 +9,13 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { categoriesData } from "../static/data";
 
 import useScrollPosition from "../hooks/useScrollPosition";
-
-import { useLocation } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
-import useSectionReached from "../hooks/useSectionReached";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
     const [viewCategories, setViewCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
 
     const { scrollPos } = useScrollPosition();
-    const { pathname, hash } = useLocation();
-
-    const id = useSectionReached();
-    console.log(id, "++++");
-    console.log(scrollPos, "scrollPos");
 
     return (
         <nav
@@ -78,61 +70,24 @@ export const NavBar = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center w-2/4 gap-5">
-                    <NavHashLink
-                        to="/#home"
-                        smooth={true}
-                        className={
-                            (`${pathname}${hash}` === "/#home" && !id) ||
-                            (scrollPos === 0 && `${pathname}${hash}` === "/#home" && !id) ||
-                            (scrollPos === 0 && !id && pathname === "/")
-                                ? "text-yellow"
-                                : ""
-                        }
+                    <NavLink
+                        className={({ isActive }) => (isActive ? "text-yellow" : "")}
+                        to="/"
                     >
                         Home
-                    </NavHashLink>
-                    <NavHashLink
-                        smooth={true}
-                        className={
-                            (`${pathname}${hash}` === "/#bestselling" &&
-                                scrollPos < 170 &&
-                                id !== "events" &&
-                                id) ||
-                            (id === "bestselling" && id !== "events" && id !== "")
-                                ? "text-yellow"
-                                : ""
-                        }
-                        to="/#bestselling"
-                    >
-                        Best Selling
-                    </NavHashLink>
-
-                    <NavHashLink
-                        to="/#events"
-                        smooth={true}
-                        className={
-                            (`${pathname}${hash}` === "/#events" &&
-                                scrollPos !== 0 &&
-                                id !== "bestselling") ||
-                            (id === "events" && id !== "bestselling")
-                                ? "text-yellow"
-                                : ""
-                        }
-                    >
-                        Events
-                    </NavHashLink>
-                    <NavHashLink
-                        className={pathname === "/products" ? "text-yellow" : ""}
+                    </NavLink>
+                    <NavLink
+                        className={({ isActive }) => (isActive ? "text-yellow" : "")}
                         to="/products"
                     >
                         Products
-                    </NavHashLink>
-                    <NavHashLink
+                    </NavLink>
+                    <NavLink
+                        className={({ isActive }) => (isActive ? "text-yellow" : "")}
                         to="/faq"
-                        className={pathname === "/faq" ? "text-yellow" : ""}
                     >
                         FAQ
-                    </NavHashLink>
+                    </NavLink>
                 </div>
                 <div className="flex items-center justify-end w-1/4 gap-5">
                     <button className="relative">
