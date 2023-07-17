@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { BsSearch } from "react-icons/bs";
@@ -11,19 +11,22 @@ import { productData } from "../static/data";
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchedData, setSearchedData] = useState([]);
-    const [viewDropdown, setDropDown] = useState(false);
 
     const handleSearch = (e) => {
-        const { value } = e.target;
+        const value = e.target.value;
         setSearchTerm(value);
+    };
 
+    useEffect(() => {
         const filteredProducts =
             productData &&
             productData.filter((product) =>
-                product.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+                product.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
         setSearchedData(filteredProducts);
-    };
+    }, [searchTerm]);
+
+    console.log(searchedData, "data");
 
     return (
         <header className="bg-violet-100">
@@ -52,21 +55,24 @@ const Header = () => {
                                     size={20}
                                 />
                             </button>
-                            {searchedData.length && searchTerm ? (
+                            {searchedData.length !== 0 && searchTerm && (
                                 <div
                                     className={`absolute top-[50px] w-full bg-slate-50 shadow-sm z-10`}
                                 >
                                     {searchTerm &&
-                                        searchedData?.map((product) => {
+                                        searchedData.map((product) => {
                                             const productName = product.name;
-                                            const modifiedProductName = productName.replace(
-                                                /\s+/g,
+                                            const modifiedProductName = productName.replaceAll(
+                                                " ",
                                                 "-"
                                             );
 
+                                            console.log(productName, "product name");
+                                            console.log(modifiedProductName, "modified name");
+
                                             return (
                                                 <Link
-                                                    onClick={() => setSearchTerm("")}
+                                                    // onClick={() => setSearchTerm("")}
                                                     key={product.id}
                                                     to={`/product/${modifiedProductName}`}
                                                 >
@@ -83,8 +89,6 @@ const Header = () => {
                                             );
                                         })}
                                 </div>
-                            ) : (
-                                ""
                             )}
                         </div>
                     </div>
