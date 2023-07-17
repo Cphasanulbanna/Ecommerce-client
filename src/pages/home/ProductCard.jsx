@@ -6,7 +6,7 @@ import { AiOutlineEye } from "react-icons/ai";
 
 import StarRatings from "react-star-ratings";
 
-const BestSellingProduct = ({ product }) => {
+const ProductCard = ({ product }) => {
     return (
         <div
             id="best-selling-product"
@@ -68,4 +68,4 @@ const BestSellingProduct = ({ product }) => {
     );
 };
 
-export default BestSellingProduct;
+export default ProductCard;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { productData } from "../../static/data";
 
-import BestSellingProduct from "./BestSellingProduct";
+import ProductCard from "./ProductCard";
 
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([]);
@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
                 <div className="grid grid-cols-2 gap-3 sm:gap-3 md:gap-5 md:grid-cols-4 lg:grid-cols-5">
                     {products &&
                         products?.map((product) => (
-                            <BestSellingProduct
+                            <ProductCard
                                 key={product.name}
                                 product={product}
                             />
