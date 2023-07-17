@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -10,11 +10,15 @@ import { categoriesData } from "../static/data";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import Cart from "../pages/product/Cart";
+import useOutsideClick from "../hooks/useOutsideclick";
 
 export const NavBar = () => {
-    const [viewCategories, setViewCategories] = useState(false);
+    const [opencategories, setOpenCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [openCart, setOpenCart] = useState(false);
+
+    const dropdownRef = useRef(null);
+    const parentRef = useRef(null);
 
     const navigate = useNavigate();
 
@@ -22,13 +26,17 @@ export const NavBar = () => {
         try {
             category && navigate(`/products?category=${category}`);
             setSelectedCategory(category.title);
-            setViewCategories(false);
+            setOpenCategories(false);
         } catch (error) {}
     };
 
     const closeCart = () => {
         setOpenCart(false);
     };
+
+    console.log(dropdownRef, "red");
+
+    useOutsideClick(dropdownRef, null, () => setOpenCategories(false));
 
     return (
         <>
@@ -39,13 +47,13 @@ export const NavBar = () => {
                 />
             )}
             <nav
-                className={`${viewCategories ? "overflow-visible" : ""}  
+                className={`${opencategories ? "overflow-visible" : ""}  
             py-2 bg-violet-900 text-white`}
             >
                 <div className="flex items-center justify-between sm:gap-14 md:gap-20 wrapper">
                     <div className="relative w-1/4 -mb-2 text-black bg-white rounded-t-sm shadow-md">
                         <div
-                            onClick={() => setViewCategories((prev) => !prev)}
+                            onClick={() => setOpenCategories((prev) => !prev)}
                             className="flex items-center p-3 cursor-pointer"
                         >
                             <BiSolidCategoryAlt
@@ -60,8 +68,9 @@ export const NavBar = () => {
                         </div>
 
                         <div
+                            ref={dropdownRef}
                             className={`${
-                                viewCategories
+                                opencategories
                                     ? "max-h-[65vh] py-4 transition-all duration-500 ease-in-out"
                                     : "py-0  max-h-0"
                             } bg-white absolute z-40 flex flex-col w-full overflow-y-auto text-black shadow-sm rounded-b-sm`}
