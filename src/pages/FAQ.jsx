@@ -27,7 +27,7 @@ const FAQ = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
     return (
-        <section className="py-8 bg-violet-100 sm:py-16">
+        <section className="h-full py-8 bg-violet-100 sm:py-16">
             <div className="wrapper">
                 <h1 className="mb-8 font-bold sm:text-3xl">FAQ</h1>
                 <div className="flex flex-col gap-6">

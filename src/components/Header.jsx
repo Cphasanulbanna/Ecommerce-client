@@ -64,7 +64,7 @@ const Header = () => {
                                             return (
                                                 <Link
                                                     key={product.id}
-                                                    to={`/product/${modifiedProductName}`}
+                                                    to={`/products/${modifiedProductName}`}
                                                 >
                                                     <div className="flex items-start w-full py-3">
                                                         <div className="w-[40px] h-[40px] mr-4">

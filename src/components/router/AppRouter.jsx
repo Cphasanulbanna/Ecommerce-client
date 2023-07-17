@@ -9,6 +9,7 @@ import Header from "../Header";
 import { NavBar } from "../NavBar";
 import ProductsPage from "../../pages/ProductsPage";
 import ProductsDetailsPage from "../../pages/ProductsDetailsPage";
+import BestSellingPage from "../../pages/BestSellingPage";
 
 const AppRouter = () => {
     return (
@@ -35,6 +36,10 @@ const AppRouter = () => {
                 <Route
                     path="/products/:id"
                     element={<ProductsDetailsPage />}
+                />
+                <Route
+                    path="/best-selling"
+                    element={<BestSellingPage />}
                 />
             </Routes>
         </>
