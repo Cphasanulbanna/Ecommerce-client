@@ -82,6 +82,18 @@ export const NavBar = () => {
                     </NavLink>
                     <NavLink
                         className={({ isActive }) => (isActive ? "text-yellow" : "")}
+                        to="/best-selling"
+                    >
+                        Best selling
+                    </NavLink>
+                    <NavLink
+                        className={({ isActive }) => (isActive ? "text-yellow" : "")}
+                        to="/events"
+                    >
+                        Events
+                    </NavLink>
+                    <NavLink
+                        className={({ isActive }) => (isActive ? "text-yellow" : "")}
                         to="/faq"
                     >
                         FAQ

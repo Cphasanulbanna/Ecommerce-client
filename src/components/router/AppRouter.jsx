@@ -10,6 +10,7 @@ import { NavBar } from "../NavBar";
 import ProductsPage from "../../pages/ProductsPage";
 import ProductsDetailsPage from "../../pages/ProductsDetailsPage";
 import BestSellingPage from "../../pages/BestSellingPage";
+import EventsPage from "../../pages/home/EventsPage";
 
 const AppRouter = () => {
     return (
@@ -40,6 +41,10 @@ const AppRouter = () => {
                 <Route
                     path="/best-selling"
                     element={<BestSellingPage />}
+                />
+                <Route
+                    path="/events"
+                    element={<EventsPage />}
                 />
             </Routes>
         </>

@@ -2,9 +2,9 @@ import React from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const Events = () => {
+const Events = ({ inPage }) => {
     return (
-        <section className="py-8 lg:py-16 bg-violet-100">
+        <section className={`${inPage ? "py-0" : "py-8 lg:py-16"}  bg-violet-100`}>
             <div className="flex items-center justify-between p-12 overflow-hidden bg-white rounded-md shadow-md wrapper">
                 <div className="w-1/2">
                     <img
