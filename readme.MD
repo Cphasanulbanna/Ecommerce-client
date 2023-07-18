@@ -5,36 +5,36 @@ Welcome to the MERN Stack Ecommerce Project! This ongoing project utilizes the M
 ## SIGNUP & LOGIN PAGE
 
 <p  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-  <img src="./images/auth.png" alt="signup" width="100%">
-  <img src="./images/login.png" alt="login" width="100%">
+  <img src="./images/auth.png" alt="signup">
+  <img src="./images/login.png" alt="login">
 </p>
 
 ## HOME PAGE
 
 <p  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-  <img src="./images/spotlight.png" alt="signup" width="100%">
-  <img src="./images/categy section.png" alt="login" width="100%">
+  <img src="./images/spotlight.png" alt="signup">
+  <img src="./images/categy section.png" alt="login">
 </p>
 
 ## SEARCH & FILTER BY CATEGORY FEATURES
 
 <p  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-  <img src="./images/categories.png" alt="signup" width="100%">
-  <img src="./images/search.png" alt="login" width="100%">
+  <img src="./images/categories.png" alt="signup">
+  <img src="./images/search.png" alt="login">
 </p>
 
 ## PRODUCTS PAGE & EVENTS PAGE
 
 <p  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-  <img src="./images/prodcuts page.png" alt="signup" width="100%">
-  <img src="./images/events page.png" alt="login" width="100%">
+  <img src="./images/prodcuts page.png" alt="signup">
+  <img src="./images/events page.png" alt="login">
 </p>
 
 ## FAQ PAGE & BEST DEALS SECTION
 
 <p  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-  <img src="./images/faq.png" alt="signup" width="100%">
-  <img src="./images/best deals.png" alt="login" width="100%">
+  <img src="./images/faq.png" alt="signup">
+  <img src="./images/best deals.png" alt="login">
 </p>
 
 ## Technologies Used
