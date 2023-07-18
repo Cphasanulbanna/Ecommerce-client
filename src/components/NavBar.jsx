@@ -51,7 +51,10 @@ export const NavBar = () => {
                 className={`${opencategories ? "overflow-visible" : ""}  
             py-2 bg-violet-900 text-white`}
             >
-                <div className="flex items-center justify-between sm:gap-14 md:gap-20 wrapper">
+                <div
+                    ref={dropdownRef}
+                    className="flex items-center justify-between sm:gap-14 md:gap-20 wrapper"
+                >
                     <div className="relative w-1/4 -mb-2 text-black bg-white rounded-t-sm shadow-md">
                         <div
                             onClick={() => setOpenCategories((prev) => !prev)}
@@ -69,7 +72,6 @@ export const NavBar = () => {
                         </div>
 
                         <div
-                            ref={dropdownRef}
                             className={`${
                                 opencategories
                                     ? "max-h-[65vh] py-4 transition-all duration-500 ease-in-out"
@@ -132,7 +134,7 @@ export const NavBar = () => {
                     <div className="flex items-center justify-end w-1/4 gap-5">
                         <button
                             className="relative"
-                            onClick={() => setOpenCart(true)}
+                            onClick={() => setOpenCart((prev) => !prev)}
                         >
                             <FaCartPlus size={25} />
                             <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
