@@ -228,8 +228,7 @@ export const categoriesData = [
         id: 6,
         title: "Gifts",
         subTitle: "",
-        image_Url:
-            "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+        image_Url: "https://images.herzindagi.info/image/2023/Jan/gifffff22222.jpg",
     },
     {
         id: 7,
@@ -301,7 +300,7 @@ export const productData = [
         image_Url: [
             {
                 public_id: "test",
-                url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+                url: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-model-unselect-gallery-1-202209_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1660745142376",
             },
             {
                 public_id: "test",
@@ -332,7 +331,7 @@ export const productData = [
         image_Url: [
             {
                 public_id: "test",
-                url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+                url: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/og-macbook-pro-202301?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1670261864358",
             },
             {
                 public_id: "test",
@@ -424,7 +423,7 @@ export const productData = [
         image_Url: [
             {
                 public_id: "test",
-                url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+                url: "https://images.indianexpress.com/2021/11/PC-Gaming-accessories-controller-image.jpg",
             },
             {
                 public_id: "test",
@@ -463,7 +462,7 @@ export const productData = [
         image_Url: [
             {
                 public_id: "test",
-                url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+                url: "https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/07/Best-accessories-for-gaming-laptops.jpg",
             },
             {
                 public_id: "test",
@@ -492,7 +491,7 @@ export const productData = [
         image_Url: [
             {
                 public_id: "test",
-                url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+                url: "https://www.headphonezone.in/cdn/shop/products/Headphone-Zone-Meze-Liric-01.jpg?v=1636705697&width=2048",
             },
             {
                 public_id: "test",

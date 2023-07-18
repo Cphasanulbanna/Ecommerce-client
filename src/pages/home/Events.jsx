@@ -8,8 +8,9 @@ const Events = ({ inPage }) => {
             <div className="flex items-center justify-between p-12 overflow-hidden bg-white rounded-md shadow-md wrapper">
                 <div className="w-1/2">
                     <img
-                        src=""
+                        src="https://images.tcdn.com.br/img/img_prod/893885/apple_iphone_14_128gb_roxo_6_1_12mp_ios_5g_com_carregador_25w_usb_c_power_adapter_usb_c_to_lightning_4147_1_c12ded022c2bbef33929495ce0bcec61.jpg"
                         alt="product"
+                        className="object-center object-cotain"
                     />
                 </div>
                 <div className="flex flex-col w-1/2 gap-3">
