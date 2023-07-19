@@ -5,6 +5,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { FaCartPlus } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 import { categoriesData } from "../static/data";
 
@@ -14,11 +15,13 @@ import Cart from "../pages/product/Cart";
 
 import useOutsideClick from "../hooks/useOutsideclick";
 import useOutsideScroll from "../hooks/useOutsideScroll";
+import Wishlist from "../pages/product/Wishlist";
 
 export const NavBar = () => {
     const [opencategories, setOpenCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [openCart, setOpenCart] = useState(false);
+    const [openWishlist, setOpenWishlist] = useState(false);
 
     const dropdownRef = useRef(null);
 
@@ -26,27 +29,33 @@ export const NavBar = () => {
 
     const filterProductsByCategory = (category) => {
         try {
-            category && navigate(`/products?category=${category}`);
-            setSelectedCategory(category.title);
-            setOpenCategories(false);
-        } catch (error) {}
+            if (category) {
+                setOpenCategories(false);
+                navigate(`/products?category=${category}`);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const closeCart = () => {
         setOpenCart(false);
     };
 
+    const closeWishlist = () => {
+        setOpenWishlist(false);
+    };
+
     useOutsideClick(dropdownRef, null, () => setOpenCategories(false));
+
     useOutsideScroll(openCart);
+    useOutsideScroll(openWishlist);
 
     return (
         <>
-            {openCart && (
-                <Cart
-                    openCart={openCart}
-                    closeCart={closeCart}
-                />
-            )}
+            {openCart && <Cart closeCart={closeCart} />}
+
+            {openWishlist && <Wishlist closeWishlist={closeWishlist} />}
             <nav
                 className={`${opencategories ? "overflow-visible" : ""}  
             py-2 bg-violet-900 text-white`}
@@ -81,8 +90,15 @@ export const NavBar = () => {
                             {categoriesData?.map((category) => (
                                 <div
                                     key={category.id}
-                                    onClick={() => filterProductsByCategory(category?.title)}
-                                    className="flex items-center gap-2 relative sm:before:absolute sm:before:w-full sm:before:h-full sm:before:inset-0 sm:before:hover:bg-slate-100 sm:before:opacity-[0.5] cursor-pointer"
+                                    onClick={() => {
+                                        filterProductsByCategory(category?.title);
+                                        setSelectedCategory(category.title);
+                                    }}
+                                    className={`${
+                                        selectedCategory === category?.title
+                                            ? "text-violet-900 font-bold"
+                                            : ""
+                                    } flex items-center gap-2 relative sm:before:absolute sm:before:w-full sm:before:h-full sm:before:inset-0 sm:before:hover:bg-slate-100 sm:before:opacity-[0.5] cursor-pointer`}
                                 >
                                     <div className="w-[50px] h-[50px]">
                                         <img
@@ -92,6 +108,14 @@ export const NavBar = () => {
                                         />
                                     </div>
                                     <h3>{category.title}</h3>
+                                    {selectedCategory === category?.title && (
+                                        <div>
+                                            <AiFillCheckCircle
+                                                size={20}
+                                                className="text-violet-900"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -134,14 +158,17 @@ export const NavBar = () => {
                     <div className="flex items-center justify-end w-1/4 gap-5">
                         <button
                             className="relative"
-                            onClick={() => setOpenCart((prev) => !prev)}
+                            onClick={() => setOpenCart(true)}
                         >
                             <FaCartPlus size={25} />
                             <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
                                 1
                             </span>
                         </button>
-                        <button className="relative">
+                        <button
+                            onClick={() => setOpenWishlist(true)}
+                            className="relative"
+                        >
                             <AiFillHeart size={25} />
                             <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
                                 1

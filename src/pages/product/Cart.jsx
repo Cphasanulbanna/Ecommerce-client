@@ -10,7 +10,7 @@ import Overlay from "../../components/general/Overlay";
 
 import { cartAnimation } from "../../assets/animations/animations";
 
-const Cart = ({ openCart, closeCart }) => {
+const Cart = ({ closeCart }) => {
     const [cart] = useState([
         { id: 1, name: "Product 1", quantity: 1, price: 100 },
         { id: 2, name: "Product 2", quantity: 2, price: 150 },
