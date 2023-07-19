@@ -57,9 +57,9 @@ const NavBar = () => {
             >
                 <div
                     ref={dropdownRef}
-                    className="flex items-center justify-between sm:gap-14 md:gap-20 wrapper"
+                    className="items-center justify-between hidden lg:flex sm:gap-14 md:gap-20 wrapper"
                 >
-                    <div className="relative w-1/4 -mb-2 text-black bg-white rounded-t-sm shadow-md">
+                    <div className="relative lg:w-[290px] md:w-[260px] mb-2 text-black bg-white rounded-t-sm shadow-md">
                         <div
                             onClick={() => setOpenCategories((prev) => !prev)}
                             className="flex items-center p-3 cursor-pointer"
@@ -112,7 +112,7 @@ const NavBar = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex items-center justify-center w-2/4 gap-5">
+                    <div className="items-center justify-center hidden gap-5 lg:flex">
                         <NavLink
                             className={({ isActive }) => (isActive ? "text-yellow" : "")}
                             to="/"
@@ -147,7 +147,7 @@ const NavBar = () => {
                             FAQ
                         </NavLink>
                     </div>
-                    <div className="flex items-center justify-end w-1/4 gap-5">
+                    <div className="items-center justify-end hidden gap-5 lg:flex">
                         <button
                             className="relative"
                             onClick={() => setOpenCart(true)}
