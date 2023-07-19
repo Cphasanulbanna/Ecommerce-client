@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -17,7 +17,7 @@ import useOutsideClick from "../hooks/useOutsideclick";
 import useOutsideScroll from "../hooks/useOutsideScroll";
 import Wishlist from "../pages/product/Wishlist";
 
-export const NavBar = () => {
+const NavBar = () => {
     const [opencategories, setOpenCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [openCart, setOpenCart] = useState(false);
@@ -27,16 +27,11 @@ export const NavBar = () => {
 
     const navigate = useNavigate();
 
-    const filterProductsByCategory = (category) => {
-        try {
-            if (category) {
-                setOpenCategories(false);
-                navigate(`/products?category=${category}`);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    useEffect(() => {
+        const url = `/products?category=${selectedCategory}`;
+        setOpenCategories(false);
+        navigate(url);
+    }, [selectedCategory]);
 
     const closeCart = () => {
         setOpenCart(false);
@@ -90,10 +85,7 @@ export const NavBar = () => {
                             {categoriesData?.map((category) => (
                                 <div
                                     key={category.id}
-                                    onClick={() => {
-                                        filterProductsByCategory(category?.title);
-                                        setSelectedCategory(category.title);
-                                    }}
+                                    onClick={() => setSelectedCategory(category.title)}
                                     className={`${
                                         selectedCategory === category?.title
                                             ? "text-violet-900 font-bold"
@@ -108,7 +100,7 @@ export const NavBar = () => {
                                         />
                                     </div>
                                     <h3>{category.title}</h3>
-                                    {selectedCategory === category?.title && (
+                                    {selectedCategory === category.title && (
                                         <div>
                                             <AiFillCheckCircle
                                                 size={20}
@@ -183,3 +175,5 @@ export const NavBar = () => {
         </>
     );
 };
+
+export default React.memo(NavBar);

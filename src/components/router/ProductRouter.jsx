@@ -7,7 +7,7 @@ import BestSellingPage from "../../pages/product/BestSellingPage";
 import EventsPage from "../../pages/product/EventsPage";
 import ProductsDetailsPage from "../../pages/product/ProductsDetailsPage";
 import Header from "../Header";
-import { NavBar } from "../NavBar";
+import NavBar from "../NavBar";
 
 const ProductRouter = () => {
     return (

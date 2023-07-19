@@ -29,7 +29,7 @@ const Header = () => {
     return (
         <header className="bg-violet-100">
             <div className="flex items-center justify-between py-4 sm:gap-14 md:gap-20 wrapper">
-                <div className="sm:w-1/4">
+                <div className="w-max">
                     <Link to="/">
                         <PiShoppingCartSimpleFill
                             className="text-violet-900"
@@ -37,17 +37,17 @@ const Header = () => {
                         />
                     </Link>
                 </div>
-                <div className="mx-auto sm:w-2/4">
-                    <div className="form-control h-[48px]">
-                        <div className="relative input-group ">
+                <div className="sm:mx-auto lg:w-[500px] md:w-[350px] w-[fill] ml-7">
+                    <div className="">
+                        <div className="relative border-2 rounded-md border-violet-900 h-[48px] flex justify-between">
                             <input
                                 type="text"
                                 placeholder="Search…"
                                 onChange={handleSearch}
                                 value={searchTerm}
-                                className="w-full h-full border-2 input input-bordered focus:outline-none text-violet-900 placeholder:text-violet-900 border-violet-900 bg-violet-100"
+                                className="w-full h-full border-none input input-bordered focus:outline-none text-violet-900 placeholder:text-violet-900 bg-violet-100"
                             />
-                            <button className="h-full btn btn-square bg-violet-900 hover:bg-purple-800">
+                            <button className="flex items-center justify-center h-full btn-square bg-violet-900 hover:bg-purple-800">
                                 <BsSearch
                                     color="#fff"
                                     size={20}
@@ -88,7 +88,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-end sm:w-1/4">
+                <div className="justify-end hidden md:flex">
                     <button className="text-white btn bg-violet-900 hover:bg-purple-800">
                         <span>Become a seller</span> <BiRightArrowAlt size={22} />
                     </button>

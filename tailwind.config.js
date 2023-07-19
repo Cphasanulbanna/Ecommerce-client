@@ -6,7 +6,7 @@ export default {
         extend: {
             screens: {
                 sm: "480px",
-                md: "980px",
+                md: "768px",
             },
             backgroundImage: {
                 spotlight: "url('/images/spotlight.webp')",
