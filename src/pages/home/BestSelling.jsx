@@ -20,15 +20,35 @@ const BestSelling = () => {
         setProducts(sortedProducts);
     }, []);
 
-    const sliderStyle = {};
-
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        className: sliderStyle,
+        arrows: false,
+        // autoplay: true,
+        swipeToSlide: true,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
     };
     return (
         <section

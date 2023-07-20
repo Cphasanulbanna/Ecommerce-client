@@ -13,11 +13,11 @@ const ProductCard = ({ product }) => {
             key={product?.id}
             className="flex flex-col h-full gap-3 p-3 overflow-hidden bg-white rounded-md shadow-md"
         >
-            <div className="overflow-hidden rounded-md max-h-[150px] aspect-video">
+            <div className="overflow-hidden rounded-md aspect-video">
                 <img
                     src={product?.image_Url[0]?.url}
                     alt="product"
-                    className="object-cover object-center"
+                    className="object-contain"
                 />
             </div>
 

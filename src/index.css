@@ -134,6 +134,11 @@ button {
     #best-selling-product .star-ratings .star-container {
         padding: 0 2px !important;
     }
+
+    /* SLIDER BEST-SELLING */
+    #best-selling .slick-list .slick-slide > div {
+        margin: 4px;
+    }
 }
 
 .text-yellow {
