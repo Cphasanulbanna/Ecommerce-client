@@ -11,38 +11,38 @@ const ProductCard = ({ product }) => {
         <div
             id="best-selling-product"
             key={product?.id}
-            className="flex flex-col gap-3 p-3 overflow-hidden bg-white rounded-md shadow-md"
+            className="flex flex-col h-full gap-3 p-3 overflow-hidden bg-white rounded-md shadow-md"
         >
-            <div className="flex gap-3">
-                <div className="w-5/6 aspect-square max-h-[120px]">
-                    <img
-                        src={product?.image_Url[0]?.url}
-                        alt="product"
-                        className="object-contain object-center"
-                    />
-                </div>
-                <div className="flex flex-wrap justify-end w-1/6 gap-2 h-max">
-                    <button>
-                        <AiOutlineHeart
-                            title="Add to wishlist"
-                            size={22}
-                        />
-                    </button>
-                    <button>
-                        <AiOutlineShoppingCart
-                            title="Add to cart"
-                            size={22}
-                        />
-                    </button>
-                    <button>
-                        <AiOutlineEye
-                            title="View product"
-                            size={22}
-                        />
-                    </button>
-                </div>
+            <div className="overflow-hidden rounded-md max-h-[150px] aspect-video">
+                <img
+                    src={product?.image_Url[0]?.url}
+                    alt="product"
+                    className="object-cover object-center"
+                />
             </div>
-            <div className="flex flex-col gap-1 md:gap-2 sm:gap-4">
+
+            <div className="flex gap-4 h-max">
+                <button>
+                    <AiOutlineHeart
+                        title="Add to wishlist"
+                        size={25}
+                    />
+                </button>
+                <button>
+                    <AiOutlineShoppingCart
+                        title="Add to cart"
+                        size={25}
+                    />
+                </button>
+                <button>
+                    <AiOutlineEye
+                        title="View product"
+                        size={25}
+                    />
+                </button>
+            </div>
+
+            <div className="gap-1 md:gap-2 sm:gap-4">
                 <h3 className="text-sky-700">{product?.shop?.name}</h3>
                 <p className="line-clamp-2">{product?.name}</p>
                 <StarRatings

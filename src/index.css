@@ -83,6 +83,8 @@ html {
     font-weight: 400;
     box-sizing: border-box;
     vertical-align: baseline;
+    margin: 0;
+    padding: 0;
 }
 
 section {
@@ -107,6 +109,20 @@ button {
 }
 #best-selling-product .star-ratings .star-container {
     padding: 0 4px !important;
+}
+
+/* SLICK SLIDER  */
+#best-selling .slick-slide {
+    height: inherit;
+}
+
+#best-selling .slick-track {
+    display: flex;
+}
+
+#best-selling .slick-list .slick-slide > div {
+    margin: 0 15px;
+    height: 100%;
 }
 
 @media all and (max-width: 480px) {
