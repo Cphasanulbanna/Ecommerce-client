@@ -43,7 +43,7 @@
 }
 
 .section-style {
-    @apply py-12 bg-violet-100 lg:py-20 md:py-16;
+    @apply pt-12 pb-3 bg-violet-100 lg:py-20 md:py-16;
 }
 
 .main-heading {
