@@ -30,10 +30,6 @@
     @apply mx-auto sm:max-w-[1440px] sm:w-[70%] w-[90%];
 }
 
-.home {
-    @apply sm:h-[calc(100%-142px)];
-}
-
 .btn-main {
     @apply font-normal text-white border-none w-max bg-violet-900 hover:bg-purple-800;
 }
@@ -44,6 +40,14 @@
 
 .accordian {
     @apply max-h-[70px];
+}
+
+.section-style {
+    @apply py-12 bg-violet-100 lg:py-20 md:py-16;
+}
+
+.main-heading {
+    @apply mb-4 text-2xl font-bold lg:text-5xl md:text-4xl;
 }
 
 @layer base {
@@ -77,6 +81,8 @@ html {
 
 * {
     font-weight: 400;
+    box-sizing: border-box;
+    vertical-align: baseline;
 }
 
 section {

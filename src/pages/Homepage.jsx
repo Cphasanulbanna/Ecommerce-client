@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Home from "./home/Home";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import Branding from "./home/Branding";
 import Categories from "./home/Categories";
 import Events from "./home/Events";
