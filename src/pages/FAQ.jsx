@@ -35,8 +35,10 @@ const FAQ = () => {
                         <div
                             onClick={() => setClickedId(clickedId !== faq.id ? faq.id : "")}
                             key={faq.id}
-                            className={`transition-[max-height] duration-700 ease-in-out bg-white py-6 px-3 sm:p-6 rounded-md overflow-hidden cursor-pointer ${
-                                clickedId == faq.id ? "max-h-[250px] h-max" : "max-h-[70px]"
+                            className={`transition-[max-height] duration-700 ease-in-out bg-white p-3 md:p-6 rounded-md overflow-hidden cursor-pointer ${
+                                clickedId == faq.id
+                                    ? "max-h-[250px] h-max"
+                                    : "md:max-h-[70px] max-h-[50px]"
                             }`}
                         >
                             <div className={`pb-6 ${clickedId == faq.id ? "" : ""}`}>

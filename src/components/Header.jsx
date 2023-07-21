@@ -38,7 +38,7 @@ const Header = () => {
     useOutsideClick(searchBarRef, null, () => setSearchTerm(""));
 
     return (
-        <header className="bg-violet-100">
+        <header className="fixed top-0 left-0 right-0 z-50 border-b-2 border-solid bg-violet-100 border-violet-900 sm:static">
             {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />}
             <div className="flex items-center justify-between py-2 lg:py-4 sm:gap-14 md:gap-20 wrapper">
                 <div className="hidden lg:block w-max">

@@ -8,6 +8,7 @@ import EventsPage from "../../pages/product/EventsPage";
 import ProductsDetailsPage from "../../pages/product/ProductsDetailsPage";
 import Header from "../Header";
 import NavBar from "../NavBar";
+import BottomNavigation from "../general/BottomNavigation";
 
 const ProductRouter = () => {
     return (
@@ -32,6 +33,7 @@ const ProductRouter = () => {
                     element={<ProductsDetailsPage />}
                 />
             </Routes>
+            <BottomNavigation />
         </>
     );
 };

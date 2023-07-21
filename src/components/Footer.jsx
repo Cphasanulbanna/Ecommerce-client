@@ -13,7 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 const Footer = () => {
     const screenSize = useMediaQuery();
     return (
-        <footer className="bg-deep-blue">
+        <footer className="bg-deep-blue pb-[60px] sm:pb-0">
             <div className="grid grid-cols-2 gap-3 py-8 md:grid-cols-4 wrapper lg:py-16 text-slate-500">
                 <div className="flex flex-col gap-4">
                     <Link to="/">

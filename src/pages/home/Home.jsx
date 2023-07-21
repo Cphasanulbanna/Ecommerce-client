@@ -7,7 +7,7 @@ import { FaShopify } from "react-icons/fa";
 
 const Home = () => {
     return (
-        <section className="section-style">
+        <section className="pt-[150px] pb-3 bg-violet-100 lg:py-20 md:py-16">
             <section className="flex flex-col-reverse gap-10 md:flex-row md:items-center md:justify-between wrapper">
                 <div className="flex flex-col lg:w-[60%] md:w-[50%] w-full">
                     <motion.div

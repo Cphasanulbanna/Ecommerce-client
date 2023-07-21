@@ -7,6 +7,7 @@ import Header from "../Header";
 
 import HomePage from "../../pages/Homepage";
 import FAQ from "../../pages/FAQ";
+import BottomNavigation from "../general/BottomNavigation";
 
 const HomeRouter = () => {
     return (
@@ -24,6 +25,7 @@ const HomeRouter = () => {
                     element={<FAQ />}
                 />
             </Routes>
+            <BottomNavigation />
         </>
     );
 };
