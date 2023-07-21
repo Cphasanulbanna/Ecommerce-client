@@ -8,7 +8,7 @@ import { AiFillHeart } from "react-icons/ai";
 const MobileMenu = ({ setOpenMenu }) => {
     return (
         <Overlay onClick={() => setOpenMenu(false)}>
-            <div className="hidden p-4 bg-white lg:hidden sm:block max-w-[250px] overflow-hidden h-full">
+            <div className="hidden absolute right-0 w-full p-4 bg-white lg:hidden sm:block max-w-[250px] overflow-hidden h-full">
                 <div className="flex flex-col gap-4">
                     <button className="flex items-center gap-2">
                         <BsFillPersonFill size={25} />

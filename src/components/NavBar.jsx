@@ -53,7 +53,7 @@ const NavBar = () => {
     return (
         <nav
             className={`${opencategories ? "overflow-visible" : ""}  
-            py-2 bg-violet-900 text-white`}
+             bg-violet-900 text-white`}
         >
             {openCart && (
                 <Cart
@@ -67,10 +67,10 @@ const NavBar = () => {
                     closeWishlist={closeWishlist}
                 />
             )}
-            <div className="items-center justify-between hidden lg:flex sm:gap-14 md:gap-20 wrapper">
+            <div className="items-center justify-between hidden py-2 lg:flex sm:gap-14 md:gap-20 wrapper">
                 <div
                     ref={dropdownRef}
-                    className="relative lg:w-[290px] md:w-[260px] mb-2 text-black bg-white rounded-t-sm shadow-md"
+                    className="relative lg:w-[290px] my-auto md:w-[260px] text-black bg-white rounded-t-sm shadow-md"
                 >
                     <div
                         onClick={() => setOpenCategories((prev) => !prev)}
