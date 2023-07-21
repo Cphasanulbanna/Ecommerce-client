@@ -27,22 +27,22 @@ const FAQ = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
     return (
-        <section className="h-full py-8 bg-violet-100 sm:py-16">
+        <section className="min-h-full py-8 overflow-y-auto bg-violet-100 sm:py-16">
             <div className="wrapper">
                 <h1 className="mb-8 font-bold sm:text-3xl">FAQ</h1>
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3 sm:gap-6">
                     {faqs?.map((faq) => (
                         <div
                             onClick={() => setClickedId(clickedId !== faq.id ? faq.id : "")}
                             key={faq.id}
-                            className={`transition-[max-height] duration-700 ease-in-out bg-white p-6 rounded-md overflow-hidden cursor-pointer ${
-                                clickedId == faq.id ? "max-h-[250px] h-max" : "max-h-[70px]"
+                            className={`transition-[max-height] duration-700 ease-in-out bg-white py-6 px-3 sm:p-6 rounded-md overflow-hidden cursor-pointer ${
+                                clickedId == faq.id ? "max-h-[550px] h-max" : "max-h-[70px]"
                             }`}
                         >
                             <div className={`pb-6 ${clickedId == faq.id ? "" : ""}`}>
                                 <h3 className="relative">
-                                    {faq.question}
-                                    <button className="absolute z-10 top-[50%] right-2 translate-y-[-50%]">
+                                    <p> {faq.question}</p>
+                                    <button className="absolute z-10 top-[50%] right-1 sm:right-2 translate-y-[-50%]">
                                         <MdArrowForwardIos
                                             size={22}
                                             className={`duration-700 ease-in-out ${
@@ -53,7 +53,7 @@ const FAQ = () => {
                                 </h3>
                             </div>
                             <div>
-                                <p>{faq.answer}</p>
+                                <p className="text-sm">{faq.answer}</p>
                             </div>
                         </div>
                     ))}

@@ -38,9 +38,9 @@
     @apply max-h-[180px];
 }
 
-.accordian {
+/* .accordian {
     @apply max-h-[70px];
-}
+} */
 
 .section-style {
     @apply pt-12 pb-3 bg-violet-100 lg:py-20 md:py-16;
@@ -85,6 +85,9 @@ body.remove-scrollbar::-webkit-scrollbar {
 }
 *::-webkit-scrollbar-thumb {
     background-color: rgb(155, 122, 205);
+}
+*::-webkit-scrollbar-track {
+    background-color: rgb(237 233 254);
 }
 
 * {
@@ -132,6 +135,9 @@ button {
 #best-selling .slick-list .slick-slide > div {
     margin: 0 15px;
     height: 100%;
+}
+#best-selling .slick-dots {
+    bottom: -50px;
 }
 
 @media all and (max-width: 480px) {
