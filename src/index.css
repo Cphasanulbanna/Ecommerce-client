@@ -50,6 +50,10 @@
     @apply mb-4 text-2xl font-bold lg:text-5xl md:text-4xl;
 }
 
+.card-hover {
+    @apply relative sm:before:absolute sm:before:w-full sm:before:h-full sm:before:inset-0 sm:before:hover:bg-slate-100 sm:before:opacity-[0.5];
+}
+
 @layer base {
     body {
         font-family: "Lato", sans-serif;

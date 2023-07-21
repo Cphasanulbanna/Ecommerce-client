@@ -57,11 +57,11 @@ const NavBar = () => {
         >
             {openCart && <Cart closeCart={closeCart} />}
             {openWishlist && <Wishlist closeWishlist={closeWishlist} />}
-            <div
-                ref={dropdownRef}
-                className="items-center justify-between hidden lg:flex sm:gap-14 md:gap-20 wrapper"
-            >
-                <div className="relative lg:w-[290px] md:w-[260px] mb-2 text-black bg-white rounded-t-sm shadow-md">
+            <div className="items-center justify-between hidden lg:flex sm:gap-14 md:gap-20 wrapper">
+                <div
+                    ref={dropdownRef}
+                    className="relative lg:w-[290px] md:w-[260px] mb-2 text-black bg-white rounded-t-sm shadow-md"
+                >
                     <div
                         onClick={() => setOpenCategories((prev) => !prev)}
                         className="flex items-center p-3 cursor-pointer"
@@ -92,7 +92,7 @@ const NavBar = () => {
                                     selectedCategory === category?.title
                                         ? "text-violet-900 font-bold"
                                         : ""
-                                } flex items-center gap-2 relative sm:before:absolute sm:before:w-full sm:before:h-full sm:before:inset-0 sm:before:hover:bg-slate-100 sm:before:opacity-[0.5] cursor-pointer`}
+                                } flex items-center gap-2 card-hover cursor-pointer`}
                             >
                                 <div className="w-[50px] h-[50px]">
                                     <img

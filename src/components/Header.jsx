@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { BsSearch } from "react-icons/bs";
@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 
 import { productData } from "../static/data";
 import useMediaQuery from "../hooks/useMediaQuery";
-// import MobileMenu from "./general/MobileMenu";
+import MobileMenu from "./general/MobileMenu";
+import useOutsideClick from "../hooks/useOutsideclick";
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -32,9 +33,13 @@ const Header = () => {
         setSearchedData(filteredProducts);
     }, [searchTerm]);
 
+    const searchBarRef = useRef(null);
+
+    useOutsideClick(searchBarRef, null, () => setSearchTerm(""));
+
     return (
         <header className="bg-violet-100">
-            {/* {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />} */}
+            {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />}
             <div className="flex items-center justify-between py-2 lg:py-4 sm:gap-14 md:gap-20 wrapper">
                 <div className="hidden lg:block w-max">
                     <Link to="/">
@@ -44,8 +49,11 @@ const Header = () => {
                         />
                     </Link>
                 </div>
-                <div className="mx-auto lg:w-[500px] md:w-[350px] sm:mx-0 w-full">
-                    <div className="relative border-2 rounded-md border-violet-900 h-[40px] lg:h-[48px] flex justify-between overflow-hidden">
+                <div
+                    ref={searchBarRef}
+                    className="mx-auto lg:w-[500px] md:w-[350px] sm:mx-0 w-full"
+                >
+                    <div className="relative border-2 rounded-md border-violet-900 h-[40px] lg:h-[48px] flex justify-between">
                         <input
                             type="text"
                             placeholder="Search…"
@@ -60,9 +68,7 @@ const Header = () => {
                             />
                         </button>
                         {searchedData.length !== 0 && searchTerm && (
-                            <div
-                                className={`absolute top-[50px] w-full bg-slate-50 shadow-sm z-10`}
-                            >
+                            <div className={`absolute top-[50px] w-full bg-white shadow-sm z-10`}>
                                 {searchTerm &&
                                     searchedData.map((product) => {
                                         const productName = product.name;
@@ -77,14 +83,14 @@ const Header = () => {
                                                 key={product.id}
                                                 to={`/products/${modifiedProductName}`}
                                             >
-                                                <div className="flex items-start w-full py-3">
+                                                <div className="flex items-center w-full p-3 card-hover">
                                                     <div className="w-[40px] h-[40px] mr-4">
                                                         <img
                                                             src={product.image_Url[0].url}
                                                             alt="product"
                                                         />
                                                     </div>
-                                                    <h1>{product.name}</h1>
+                                                    <h1 className="line-clamp-1">{product.name}</h1>
                                                 </div>
                                             </Link>
                                         );
