@@ -53,20 +53,23 @@ const Header = () => {
                     ref={searchBarRef}
                     className="mx-auto lg:w-[500px] md:w-[350px] sm:mx-0 w-full"
                 >
-                    <div className="relative border-2 rounded-md border-violet-900 h-[40px] lg:h-[48px] flex justify-between">
-                        <input
-                            type="text"
-                            placeholder="Search…"
-                            onChange={handleSearch}
-                            value={searchTerm}
-                            className="w-full h-full border-none input input-bordered focus:outline-none text-violet-900 placeholder:text-violet-900 bg-violet-100"
-                        />
-                        <button className="flex items-center justify-center h-full btn-square bg-violet-900 hover:bg-purple-800">
-                            <BsSearch
-                                color="#fff"
-                                size={20}
+                    <div className="relative border-2 rounded-md border-violet-900 ">
+                        <div className="h-[40px] lg:h-[48px] flex justify-between">
+                            <input
+                                type="text"
+                                placeholder="Search…"
+                                onChange={handleSearch}
+                                value={searchTerm}
+                                className="w-full h-full border-none input input-bordered focus:outline-none text-violet-900 placeholder:text-violet-900 bg-violet-100"
                             />
-                        </button>
+                            <button className="flex items-center justify-center h-[100%] btn-square bg-violet-900 hover:bg-purple-800 overflow-hidden">
+                                <BsSearch
+                                    color="#fff"
+                                    size={20}
+                                />
+                            </button>
+                        </div>
+
                         {searchedData.length !== 0 && searchTerm && (
                             <div className={`absolute top-[50px] w-full bg-white shadow-sm z-10`}>
                                 {searchTerm &&

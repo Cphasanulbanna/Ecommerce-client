@@ -25,8 +25,8 @@ const Categories = () => {
                             initial="hidden"
                             whileInView="visible"
                             variants={{
-                                hidden: { opacity: 0, scale: 0.8 },
-                                visible: { opacity: 1, scale: 1 },
+                                hidden: { opacity: 0, scaleY: 0.5 },
+                                visible: { opacity: 1, scaleY: 1 },
                             }}
                             key={category.id}
                             className="flex items-center gap-2 sm:gap-4 cursor-pointer bg-white rounded-lg overflow-hidden p-2 sm:p-4 shadow-sm md:hover:scale-[1.02] transition duration-300"
