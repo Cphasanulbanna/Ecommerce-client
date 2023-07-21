@@ -20,7 +20,7 @@ const Subscribe = () => {
                     />
                     <button
                         type="submit"
-                        className="min-w-full btn rounded-sm btn-main sm:min-w-max max-h-[40px] h-[40px]"
+                        className="min-w-full btn rounded-sm btn-main sm:min-w-max max-h-[40px] min-h-[40px]"
                     >
                         Submit
                     </button>
