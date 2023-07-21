@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-import { motion } from "framer-motion";
-
-import { BsFillCartCheckFill } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import { BsFillCartPlusFill } from "react-icons/bs";
@@ -10,9 +7,7 @@ import { BsFillBagHeartFill } from "react-icons/bs";
 
 import Overlay from "../../components/general/Overlay";
 
-import { cartAnimation } from "../../assets/animations/animations";
-
-const Wishlist = ({ closeWishlist }) => {
+const Wishlist = ({ closeWishlist, openWishlist }) => {
     const [wishlist] = useState([
         { id: 1, name: "Product 1", quantity: 1, price: 100 },
         { id: 2, name: "Product 2", quantity: 2, price: 150 },
@@ -21,16 +16,15 @@ const Wishlist = ({ closeWishlist }) => {
 
     return (
         <Overlay onClick={closeWishlist}>
-            <motion.div
-                style={{ right: 0, position: "absolute" }}
+            <div
+                style={{
+                    right: openWishlist ? "0" : "-380px",
+                    transition: "all 0.5s ease",
+                }}
                 onClick={(e) => e.stopPropagation()}
-                variants={cartAnimation}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="w-full h-full max-w-xs bg-white sm:max-w-sm"
+                className="inset-0 w-full h-full bg-white sm:max-w-sm sm:absolute sm:right-0 sm:left-[unset]"
             >
-                <div className="relative h-full p-5 ">
+                <div className="relative h-full p-5 text-black">
                     <div className="flex items-center gap-3 mb-10">
                         <BsFillBagHeartFill size={25} />
                         <h2 className="font-bold">3 items</h2>
@@ -73,7 +67,7 @@ const Wishlist = ({ closeWishlist }) => {
                         className="absolute z-10 cursor-pointer right-2 top-2"
                     ></AiFillCloseCircle>
                 </div>
-            </motion.div>
+            </div>
         </Overlay>
     );
 };

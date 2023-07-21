@@ -55,8 +55,18 @@ const NavBar = () => {
             className={`${opencategories ? "overflow-visible" : ""}  
             py-2 bg-violet-900 text-white`}
         >
-            {openCart && <Cart closeCart={closeCart} />}
-            {openWishlist && <Wishlist closeWishlist={closeWishlist} />}
+            {openCart && (
+                <Cart
+                    openCart={openCart}
+                    closeCart={closeCart}
+                />
+            )}
+            {openWishlist && (
+                <Wishlist
+                    openWishlist={openWishlist}
+                    closeWishlist={closeWishlist}
+                />
+            )}
             <div className="items-center justify-between hidden lg:flex sm:gap-14 md:gap-20 wrapper">
                 <div
                     ref={dropdownRef}

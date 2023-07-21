@@ -76,6 +76,10 @@ html {
     user-select: none;
 }
 
+body.remove-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 *::-webkit-scrollbar {
     width: 4px;
 }
