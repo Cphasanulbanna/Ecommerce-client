@@ -6,7 +6,7 @@ import { AiOutlineEye } from "react-icons/ai";
 
 import StarRatings from "react-star-ratings";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, inHome }) => {
     return (
         <div
             id="best-selling-product"
@@ -43,8 +43,8 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className="gap-1 md:gap-2 sm:gap-4">
-                <h3 className="text-sky-700">{product?.shop?.name}</h3>
-                <p className="line-clamp-2">{product?.name}</p>
+                <h3 className="text-sky-700 line-clamp-1">{product?.shop?.name}</h3>
+                <p className={`line-clamp-2 ${!inHome ? "line-clamp-1" : ""}`}>{product?.name}</p>
                 <StarRatings
                     rating={product?.rating}
                     starRatedColor="orange"
