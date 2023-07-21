@@ -45,7 +45,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="mx-auto lg:w-[500px] md:w-[350px] sm:mx-0 w-full">
-                    <div className="relative border-2 rounded-md border-violet-900 h-[40px] lg:h-[48px] flex justify-between">
+                    <div className="relative border-2 rounded-md border-violet-900 h-[40px] lg:h-[48px] flex justify-between overflow-hidden">
                         <input
                             type="text"
                             placeholder="Search…"

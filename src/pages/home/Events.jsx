@@ -32,10 +32,10 @@ const Events = ({ inPage }) => {
                     </div>
                     <p className="text-lg text-red">Time's up!</p>
                     <div className="flex items-center gap-4">
-                        <button className="text-sm font-normal text-white btn bg-violet-900 hover:bg-purple-800">
+                        <button className="min-h-[40px] h-[40px] text-sm font-normal text-white btn bg-violet-900 hover:bg-purple-800">
                             See Details
                         </button>
-                        <button className="text-sm font-normal text-white btn bg-violet-900 hover:bg-purple-800">
+                        <button className="min-h-[40px] h-[40px] text-sm font-normal text-white btn bg-violet-900 hover:bg-purple-800">
                             Buy Now
                         </button>
                     </div>
