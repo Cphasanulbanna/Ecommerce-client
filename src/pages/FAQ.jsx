@@ -33,7 +33,7 @@ const FAQ = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1 }}
             className="min-h-full py-8 overflow-y-auto bg-violet-100 sm:py-16"
         >
             <div className="wrapper">

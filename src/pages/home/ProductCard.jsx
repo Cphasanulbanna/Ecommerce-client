@@ -3,6 +3,7 @@ import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import StarRatings from "react-star-ratings";
 
@@ -21,7 +22,7 @@ const ProductCard = ({ product, inHome }) => {
                 />
             </div>
 
-            <div className="flex gap-4 h-max">
+            <div className="flex items-center gap-4 h-max">
                 <button>
                     <AiOutlineHeart
                         title="Add to wishlist"
@@ -34,12 +35,15 @@ const ProductCard = ({ product, inHome }) => {
                         size={25}
                     />
                 </button>
-                <button>
+                <Link
+                    className=""
+                    to={`/products/${product?.id}`}
+                >
                     <AiOutlineEye
                         title="View product"
                         size={25}
                     />
-                </button>
+                </Link>
             </div>
 
             <div className="gap-1 md:gap-2 sm:gap-4">

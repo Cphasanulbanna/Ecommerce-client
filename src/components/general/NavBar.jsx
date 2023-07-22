@@ -7,15 +7,15 @@ import { AiFillHeart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillCheckCircle } from "react-icons/ai";
 
-import { categoriesData } from "../static/data";
+import { categoriesData } from "../../static/data";
 
 import { NavLink, useNavigate } from "react-router-dom";
 
-import Cart from "../pages/product/Cart";
+import Cart from "../../pages/product/Cart";
 
-import useOutsideClick from "../hooks/useOutsideclick";
-import useOutsideScroll from "../hooks/useOutsideScroll";
-import Wishlist from "../pages/product/Wishlist";
+import useOutsideClick from "../../hooks/useOutsideclick";
+import useOutsideScroll from "../../hooks/useOutsideScroll";
+import Wishlist from "../../pages/product/Wishlist";
 
 const NavBar = () => {
     const [opencategories, setOpenCategories] = useState(false);

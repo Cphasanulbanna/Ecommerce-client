@@ -8,7 +8,7 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
 import { Link } from "react-router-dom";
 
-import useMediaQuery from "../hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Footer = () => {
     const screenSize = useMediaQuery();

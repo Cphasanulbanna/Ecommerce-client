@@ -7,10 +7,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { Link } from "react-router-dom";
 
-import { productData } from "../static/data";
-import useMediaQuery from "../hooks/useMediaQuery";
-import MobileMenu from "./general/MobileMenu";
-import useOutsideClick from "../hooks/useOutsideclick";
+import { productData } from "../../static/data";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import MobileMenu from "./MobileMenu";
+import useOutsideClick from "../../hooks/useOutsideclick";
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState("");

@@ -8,7 +8,7 @@ import Categories from "./home/Categories";
 import Events from "./home/Events";
 import FeaturedProducts from "./home/FeaturedProduct";
 import Subscribe from "./home/Subscribe";
-import Footer from "../components/Footer";
+import Footer from "../components/general/Footer";
 import BestSelling from "./home/BestSelling";
 
 const Homepage = () => {
@@ -17,7 +17,7 @@ const Homepage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1 }}
         >
             <Home />
             <Branding />

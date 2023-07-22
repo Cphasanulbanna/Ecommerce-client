@@ -4,7 +4,7 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import { MdAddCircle } from "react-icons/md";
 import { MdRemoveCircle } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
-import Overlay from "../../components/general/Overlay";
+import Overlay from "../../components/layouts/Overlay";
 
 const Cart = ({ closeCart, openCart }) => {
     const [cart] = useState([

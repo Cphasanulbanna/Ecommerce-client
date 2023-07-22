@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { BsFillBagHeartFill } from "react-icons/bs";
 
-import Overlay from "../../components/general/Overlay";
+import Overlay from "../../components/layouts/Overlay";
 
 const Wishlist = ({ closeWishlist, openWishlist }) => {
     const [wishlist] = useState([

@@ -9,7 +9,7 @@ const EventsPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1 }}
             className="py-8 bg-violet-100 sm:py-16"
         >
             <div className="flex flex-col gap-6 sm:gap-12">

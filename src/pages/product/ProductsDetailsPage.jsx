@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { productData } from "../../static/data";
 
@@ -8,6 +8,9 @@ import { MdOutlineAdd } from "react-icons/md";
 import { MdRemove } from "react-icons/md";
 
 const ProductsDetailsPage = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+    }, []);
     const product = productData[0];
     return (
         <section className="py-16 bg-slate-50">

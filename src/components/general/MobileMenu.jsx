@@ -1,7 +1,7 @@
 import React from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import Overlay from "./Overlay";
+import Overlay from "../layouts/Overlay";
 import { FaCartPlus } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 
