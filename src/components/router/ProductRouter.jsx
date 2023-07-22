@@ -2,9 +2,9 @@ import React from "react";
 
 import { Routes, Route } from "react-router-dom";
 
-import ProductsPage from "../../pages/product/ProductsPage";
-import BestSellingPage from "../../pages/product/BestSellingPage";
-import EventsPage from "../../pages/product/EventsPage";
+import ProductsPage from "../../pages/ProductsPage";
+import BestSellingPage from "../../pages/BestSellingPage";
+import EventsPage from "../../pages/EventsPage";
 import ProductsDetailsPage from "../../pages/product/ProductsDetailsPage";
 import Header from "../Header";
 import NavBar from "../NavBar";

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { MdArrowForwardIos } from "react-icons/md";
 
+import { motion } from "framer-motion";
+
 const FAQ = () => {
     const [clickedId, setClickedId] = useState(null);
 
@@ -27,7 +29,13 @@ const FAQ = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
     return (
-        <section className="min-h-full py-8 overflow-y-auto bg-violet-100 sm:py-16">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3 }}
+            className="min-h-full py-8 overflow-y-auto bg-violet-100 sm:py-16"
+        >
             <div className="wrapper">
                 <h1 className="mb-8 font-bold sm:text-3xl">FAQ</h1>
                 <div className="flex flex-col gap-3 sm:gap-6">
@@ -61,7 +69,7 @@ const FAQ = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.div>
     );
 };
 
