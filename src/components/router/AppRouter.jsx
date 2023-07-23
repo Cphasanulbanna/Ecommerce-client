@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import AuthRouter from "./AuthRouter";
 import ProductRouter from "./ProductRouter";
 import HomeRouter from "./HomeRouter";
+import UserRouter from "./UserRouter";
 
 const AppRouter = () => {
     return (
@@ -21,6 +22,10 @@ const AppRouter = () => {
             <Route
                 path="/*"
                 element={<HomeRouter />}
+            />
+            <Route
+                path="/user/*"
+                element={<UserRouter />}
             />
         </Routes>
     );
