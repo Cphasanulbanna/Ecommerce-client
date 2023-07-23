@@ -9,6 +9,7 @@ import ProductsDetailsPage from "../../pages/product/ProductsDetailsPage";
 import Header from "../general/Header";
 import NavBar from "../general/NavBar";
 import BottomNavigation from "../general/BottomNavigation";
+import Footer from "../general/Footer";
 
 const ProductRouter = () => {
     return (
@@ -33,6 +34,7 @@ const ProductRouter = () => {
                     element={<ProductsDetailsPage />}
                 />
             </Routes>
+            <Footer />
             <BottomNavigation />
         </>
     );

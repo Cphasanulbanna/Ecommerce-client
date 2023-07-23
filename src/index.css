@@ -31,7 +31,7 @@
 }
 
 .btn-main {
-    @apply font-normal text-white border-none w-max bg-violet-900 hover:bg-purple-800;
+    @apply font-normal text-white border-none w-max bg-violet-900 hover:bg-purple-800 min-h-[40px] h-[40px];
 }
 
 .accordian-active {

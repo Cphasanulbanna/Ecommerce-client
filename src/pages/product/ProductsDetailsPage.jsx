@@ -7,13 +7,12 @@ import { FaCartPlus } from "react-icons/fa";
 import { IoMdFlash } from "react-icons/io";
 
 import { motion } from "framer-motion";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ProductsDetailsPage = () => {
     const [product, setProduct] = useState(null);
     const { id } = useParams();
 
-    console.log(id, "id");
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
 
@@ -22,11 +21,121 @@ const ProductsDetailsPage = () => {
     }, [id]);
 
     const [selectedImage, setSelectedImage] = useState(0);
+    const [activeSection, setActiveSection] = useState("PRODUCT_DETAILS");
 
     const navigate = useNavigate();
 
     const sendMessage = () => {
         navigate("/inbox?conversation=505se5d1ee44d4");
+    };
+
+    const MoreDetails = ({ product }) => {
+        return (
+            <div className="wrapper rounded-sm bg-slate-50  min-h-[40vh] shadow-sm mb-10">
+                <div className="flex items-center justify-between px-5 pt-5 pb-2 border-b-[1px]  border-solid border-slate-200">
+                    <h5
+                        onClick={() => setActiveSection("PRODUCT_DETAILS")}
+                        className={`${
+                            activeSection === "PRODUCT_DETAILS"
+                                ? "border-solid border-b-2 border-deep-blue"
+                                : "border-solid border-b-2 border-slate-50"
+                        } text-xl font-bold text-black cursor-pointer`}
+                    >
+                        Product Details
+                    </h5>
+                    <h5
+                        className={`${
+                            activeSection === "PRODUCT_REVIEWS"
+                                ? "border-solid border-b-2 border-deep-blue"
+                                : "border-solid border-b-2 border-slate-50"
+                        } text-xl font-bold text-black cursor-pointer`}
+                        onClick={() => setActiveSection("PRODUCT_REVIEWS")}
+                    >
+                        Product Reviews
+                    </h5>
+                    <h5
+                        className={`${
+                            activeSection === "SELLER_INFORMATION"
+                                ? "border-solid border-b-2 border-deep-blue"
+                                : "border-solid border-b-2 border-slate-50"
+                        } text-xl font-bold text-black cursor-pointer`}
+                        onClick={() => setActiveSection("SELLER_INFORMATION")}
+                    >
+                        Seller Information
+                    </h5>
+                </div>
+
+                <div className="p-5">
+                    {activeSection === "PRODUCT_DETAILS" ? (
+                        <div className="flex flex-col gap-6">
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+                                blanditiis assumenda laudantium provident odit sed eius fugit error
+                                earum quam quae veritatis, adipisci similique amet nisi consequatur
+                                delectus dolorum ut sunt accusantium ipsum reprehenderit. Aut vel
+                                ipsa, excepturi, quaerat vitae quia hic quos sit maxime nostrum
+                                dignissimos, amet fugit. Quis!
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                                perferendis omnis ratione repellendus, ipsa aliquam iusto incidunt
+                                quasi aspernatur molestiae, sed doloribus error magni. Eaque
+                                blanditiis nemo deserunt expedita eligendi eveniet inventore quam
+                                earum quo, doloribus obcaecati exercitationem, eos possimus minima
+                                impedit nihil totam delectus ex, laborum corporis culpa assumenda
+                                cumque praesentium accusantium. Fugiat ea, ab magnam magni eum
+                                blanditiis.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
+                                velit ipsum eligendi optio ea fugiat expedita dolores illo quam quo,
+                                exercitationem placeat, delectus dignissimos rerum!
+                            </p>
+                        </div>
+                    ) : activeSection === "PRODUCT_REVIEWS" ? (
+                        <div className="flex items-center justify-center">
+                            <p>No reviews</p>
+                        </div>
+                    ) : activeSection === "SELLER_INFORMATION" ? (
+                        <div className="flex justify-between gap-4">
+                            <div className="w-[65%] flex flex-col gap-4">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-[40px] h-[40px] cursor-pointer rounded-full overflow-hidden">
+                                        <img
+                                            src={product?.shop?.shop_avatar.url}
+                                            alt="brand"
+                                        />
+                                    </div>
+                                    <div className="flex flex-col gap-1">
+                                        <p>{product?.shop.name}</p>
+                                        <p>({product?.rating}) Rating</p>
+                                    </div>
+                                </div>
+                                <p className="w-[80%]">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                                    omnis laboriosam sunt exercitationem quisquam, vel earum
+                                    repudiandae et velit suscipit tenetur at qui voluptate repellat
+                                    molestiae dolores totam consectetur expedita?
+                                </p>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <p>Joined on: 14 june, 2023</p>
+                                <p>Total Products: 500</p>
+                                <p>Total Reviews: 320</p>
+                                <Link
+                                    to="/"
+                                    className="flex items-center justify-center px-6 btn-main"
+                                >
+                                    Visit Shop
+                                </Link>
+                            </div>
+                        </div>
+                    ) : (
+                        ""
+                    )}
+                </div>
+            </div>
+        );
     };
 
     return (
@@ -35,11 +144,11 @@ const ProductsDetailsPage = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="py-16 sm:bg-slate-50"
+            className="py-1"
         >
             <div className="sm:wrapper">
-                <div className="flex flex-col justify-between gap-5 p-4 bg-white rounded-md sm:shadow-md sm:p-10 md:flex-row">
-                    <div className="w-[5%] min-w-[60px] flex flex-col h-full py-1 overflow-x-hidden overflow-y-auto">
+                <div className="flex flex-col justify-between gap-5 p-4 bg-white rounded-md sm:p-10 md:flex-row">
+                    <div className="md:w-[5%] min-w-[60px] flex flex-row md:flex-col h-full py-1 overflow-x-auto md:overflow-x-hidden overflow-y-hidden md:overflow-y-auto">
                         {product?.image_Url?.map((image, index) => (
                             <div
                                 key={index}
@@ -112,6 +221,7 @@ const ProductsDetailsPage = () => {
                         </div>
                     </div>
                 </div>
+                <MoreDetails product={product} />
             </div>
         </motion.div>
     );
