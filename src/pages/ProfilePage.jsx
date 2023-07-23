@@ -8,11 +8,11 @@ import Profile from "./user/Profile";
 const ProfilePage = () => {
     const [active, setActive] = useState(1);
     return (
-        <section className="h-full bg-violet-100">
+        <section className="">
             <Header />
             <NavBar />
-            <div className="wrapper sm:py-10">
-                <div className="flex justify-between">
+            <div className="md:h-[calc(100vh-155px)] sm:py-10 bg-violet-100">
+                <div className="flex justify-between h-full wrapper">
                     <ProfileSidebar
                         active={active}
                         setActive={setActive}
