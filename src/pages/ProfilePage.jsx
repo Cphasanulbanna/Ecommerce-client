@@ -7,7 +7,7 @@ const ProfilePage = () => {
     const [active, setActive] = useState(1);
 
     return (
-        <section className="min-h-screen bg-violet-100 sm:py-16">
+        <section className="min-h-full bg-violet-100 sm:py-16">
             <div className="relative flex justify-between profile-wrapper">
                 <ProfileSidebar
                     active={active}
