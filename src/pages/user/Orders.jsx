@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DataTable from "react-data-table-component";
 
 const Orders = () => {
+    const [selectedRows, setSelectedRows] = useState([]);
+
     const columns = [
         {
             name: "Order Id",
@@ -37,11 +39,10 @@ const Orders = () => {
         },
     ];
     return (
-        <div>
+        <div className="flex flex-col gap-5 rounded-sm">
             <DataTable
                 columns={columns}
                 data={data}
-                selectableRows
                 fixedHeader
                 pagination
             ></DataTable>

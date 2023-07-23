@@ -2,15 +2,19 @@ import React from "react";
 
 import { Routes, Route } from "react-router-dom";
 import ProfilePage from "../../pages/ProfilePage";
+import Header from "../general/Header";
 
 const UserRouter = () => {
     return (
-        <Routes>
-            <Route
-                path="/profile"
-                element={<ProfilePage />}
-            />
-        </Routes>
+        <>
+            <Header />
+            <Routes>
+                <Route
+                    path="/profile"
+                    element={<ProfilePage />}
+                />
+            </Routes>
+        </>
     );
 };
 

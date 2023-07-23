@@ -26,6 +26,9 @@
 .wrapper {
     @apply mx-auto sm:max-w-[1440px] sm:w-[90%] w-[90%];
 }
+.profile-wrapper {
+    @apply mx-auto sm:max-w-[1440px] sm:w-[90%] w-full;
+}
 .wrapper-secondary {
     @apply mx-auto sm:max-w-[1440px] sm:w-[70%] w-[90%];
 }
@@ -90,6 +93,7 @@ body.remove-scrollbar::-webkit-scrollbar {
 
 *::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 *::-webkit-scrollbar-thumb {
     background-color: rgb(155, 122, 205);
@@ -120,6 +124,10 @@ button {
     cursor: pointer;
     min-height: 40px;
     height: 40px;
+}
+
+.calc-height {
+    height: calc(100vh - 61px);
 }
 
 /* BEST DEAL SECTION => STAR RATING */

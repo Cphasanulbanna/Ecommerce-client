@@ -16,7 +16,7 @@ const Address = () => {
     return (
         <div className="flex flex-col gap-5">
             <div className="flex items-center justify-center">
-                <div className="w-[150px] h-[150px] rounded-full border-[3px] border-solid border-red relative">
+                <div className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] rounded-full border-[3px] border-solid border-red relative">
                     <div className="overflow-hidden rounded-full">
                         <img
                             src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
@@ -37,8 +37,8 @@ const Address = () => {
             >
                 {({ errors, isSubmitting, touched, ...props }) => (
                     <Form className="">
-                        <div className="flex w-full gap-4">
-                            <div className="flex flex-col gap-4 w-[50%]">
+                        <div className="flex flex-col w-full gap-4 lg:flex-row">
+                            <div className="flex flex-col gap-3 sm:gap-4 lg:w-[50%]">
                                 <div className="relative">
                                     <label
                                         className=""
@@ -93,7 +93,7 @@ const Address = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-4 w-[50%]">
+                            <div className="flex flex-col gap-3 sm:gap-4 lg:w-[50%]">
                                 <div className="relative">
                                     <label
                                         className=""
@@ -144,7 +144,7 @@ const Address = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="mt-5 font-normal text-white rounded-sm btn w-max bg-violet-900">
+                        <button className="mt-5 font-normal text-white rounded-sm btn w-max bg-violet-900 min-h-[40px] h-[40px]">
                             Update
                         </button>
                     </Form>
