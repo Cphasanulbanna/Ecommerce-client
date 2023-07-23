@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 
 const ProductCard = ({ product, inHome }) => {
+    // const productName = product?.name.replaceAll("-", " ");
     return (
         <div
             id="best-selling-product"
