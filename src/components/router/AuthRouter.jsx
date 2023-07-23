@@ -6,19 +6,23 @@ import Login from "../../pages/auth/Login";
 import AuthLayout from "../layouts/AuthLayout";
 import Signup from "../../pages/auth/Signup";
 import AccountActivation from "../../pages/auth/AccountActivation";
+import ProtectedRouteAfterLogin from "./ProtectedRouterAfterLogin";
 
 const AuthRouter = () => {
     return (
         <AuthLayout>
             <Routes>
-                <Route
-                    path="/login"
-                    element={<Login />}
-                />
-                <Route
-                    path="/signup"
-                    element={<Signup />}
-                />
+                <Route element={<ProtectedRouteAfterLogin />}>
+                    <Route
+                        path="/login"
+                        element={<Login />}
+                    />
+                    <Route
+                        path="/signup"
+                        element={<Signup />}
+                    />
+                </Route>
+
                 <Route
                     path="/activation/:activation_token"
                     element={<AccountActivation />}
