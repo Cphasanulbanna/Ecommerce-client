@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { productData } from "../../static/data";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../product/ProductCard";
 
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([]);

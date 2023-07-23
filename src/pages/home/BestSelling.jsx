@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { productData } from "../../static/data";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../product/ProductCard";
 // import useEqualHeight from "../../hooks/useEqualHeight";
 
 const BestSelling = () => {

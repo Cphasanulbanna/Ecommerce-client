@@ -4,9 +4,9 @@ import { productData } from "../../static/data";
 
 import { AiOutlineMessage } from "react-icons/ai";
 import { FaCartPlus } from "react-icons/fa";
-import { MdOutlineAdd } from "react-icons/md";
-import { MdRemove } from "react-icons/md";
 import { IoMdFlash } from "react-icons/io";
+
+import { motion } from "framer-motion";
 
 const ProductsDetailsPage = () => {
     useEffect(() => {
@@ -14,7 +14,13 @@ const ProductsDetailsPage = () => {
     }, []);
     const product = productData[0];
     return (
-        <section className="py-16 sm:bg-slate-50">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="py-16 sm:bg-slate-50"
+        >
             <div className="sm:wrapper">
                 <div className="flex flex-col justify-between gap-5 p-4 bg-white rounded-md sm:shadow-md sm:p-10 md:flex-row">
                     <div className="flex flex-col gap-3 w-full md:w-[45%] xl:w-[35%]">
@@ -72,7 +78,7 @@ const ProductsDetailsPage = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.div>
     );
 };
 
