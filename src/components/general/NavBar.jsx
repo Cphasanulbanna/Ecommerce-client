@@ -9,7 +9,7 @@ import { AiFillCheckCircle } from "react-icons/ai";
 
 import { categoriesData } from "../../static/data";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import Cart from "../../pages/product/Cart";
 
@@ -178,9 +178,9 @@ const NavBar = () => {
                             1
                         </span>
                     </button>
-                    <button>
+                    <Link to="/user/profile">
                         <BsFillPersonFill size={25} />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </nav>

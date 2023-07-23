@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Routes, Route } from "react-router-dom";
-import Profile from "../../pages/user/Profile";
+import ProfilePage from "../../pages/ProfilePage";
 
 const UserRouter = () => {
     return (
         <Routes>
             <Route
                 path="/profile"
-                element={<Profile />}
+                element={<ProfilePage />}
             />
         </Routes>
     );
