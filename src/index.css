@@ -58,6 +58,10 @@
     @apply grid grid-cols-2 gap-3 sm:gap-3 md:gap-5 md:grid-cols-4 lg:grid-cols-5;
 }
 
+.profile-input {
+    @apply w-full border-none rounded-sm shadow-sm auth-input input input-bordered input-primary focus:outline-none;
+}
+
 @layer base {
     body {
         font-family: "Lato", sans-serif;

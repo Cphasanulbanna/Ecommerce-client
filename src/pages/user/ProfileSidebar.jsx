@@ -22,7 +22,7 @@ const options = [
 
 const ProfileSidebar = ({ active, setActive }) => {
     return (
-        <div className="flex flex-col gap-6 p-5 bg-white rounded-sm shadow-sm">
+        <div className="flex flex-col gap-6 p-5 bg-white rounded-sm shadow-sm w-[300px]">
             {options?.map((option, index) => (
                 <div
                     onClick={() => setActive(option.id)}

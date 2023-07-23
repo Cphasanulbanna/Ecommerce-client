@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "../components/general/Header";
 import NavBar from "../components/general/NavBar";
 import ProfileSidebar from "./user/ProfileSidebar";
 import Profile from "./user/Profile";
-import { useState } from "react";
 
 const ProfilePage = () => {
     const [active, setActive] = useState(1);
@@ -18,7 +17,7 @@ const ProfilePage = () => {
                         active={active}
                         setActive={setActive}
                     />
-                    <Profile />
+                    <Profile active={active} />
                 </div>
             </div>
         </section>
