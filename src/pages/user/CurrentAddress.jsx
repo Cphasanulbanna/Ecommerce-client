@@ -4,7 +4,7 @@ import { Field, Formik, Form } from "formik";
 
 import { TbPhotoEdit } from "react-icons/tb";
 
-const Address = () => {
+const CurrentAddress = () => {
     const initialValues = {
         fullname: "",
         phoneNumber: "",
@@ -154,4 +154,4 @@ const Address = () => {
     );
 };
 
-export default Address;
+export default CurrentAddress;
