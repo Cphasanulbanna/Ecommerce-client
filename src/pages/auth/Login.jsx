@@ -2,14 +2,19 @@ import React, { useState } from "react";
 
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 
 import { loginSchema } from "../../schemas";
 
 import { axiosInstance } from "../../../axiosConfig";
+import { useDispatch } from "react-redux";
+import { setUserdata } from "../../redux/reducers/userDataSlice";
 const Login = () => {
     const [viewPassword, setViewPassword] = useState(false);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const login = async (values, actions) => {
         try {
@@ -22,6 +27,18 @@ const Login = () => {
             });
 
             if (resposne.data.success === true) {
+                const { accessToken, email, fullname, id, profilePic, role } = resposne.data;
+                dispatch(
+                    setUserdata({
+                        access_token: accessToken,
+                        email,
+                        fullname,
+                        id,
+                        profilePic,
+                        role,
+                    })
+                );
+                navigate("/");
                 actions.resetForm();
             }
         } catch (error) {
@@ -83,13 +100,13 @@ const Login = () => {
                                 )}
                                 <div className="absolute right-2 top-[50%] translate-y-[-50%] h-full flex justify-center items-center">
                                     {viewPassword ? (
-                                        <button onClick={() => setViewPassword((prev) => !prev)}>
+                                        <span onClick={() => setViewPassword((prev) => !prev)}>
                                             <AiFillEye size={20} />
-                                        </button>
+                                        </span>
                                     ) : (
-                                        <button onClick={() => setViewPassword((prev) => !prev)}>
+                                        <span onClick={() => setViewPassword((prev) => !prev)}>
                                             <AiFillEyeInvisible size={20} />
-                                        </button>
+                                        </span>
                                     )}
                                 </div>
                             </div>

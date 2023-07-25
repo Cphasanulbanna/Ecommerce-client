@@ -9,6 +9,10 @@ import { FaRegAddressCard } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 
+import { axiosInstance } from "../../../axiosConfig";
+
+import { useNavigate } from "react-router-dom";
+
 const options = [
     { id: 1, name: "Profile", icon: <BiUser size={25} /> },
     { id: 2, name: "Orders", icon: <BiSolidShoppingBagAlt size={25} /> },
@@ -21,11 +25,30 @@ const options = [
 ];
 
 const ProfileSidebar = ({ active, setActive }) => {
+    const navigate = useNavigate();
+
+    const logout = async () => {
+        try {
+            const response = await axiosInstance("/auth/logout", {
+                method: "GET",
+            });
+            console.log(response.data);
+            if (response.data.success === true) {
+                localStorage.clear();
+                navigate("/auth/login");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
     return (
         <div className="flex flex-col gap-7 sticky top-[61px] sm:static p-4 md:p-5 shadow-none calc-height sm:h-max bg-violet-200 sm:bg-white rounded-sm sm:shadow-md w-max sm:w-[300px]">
             {options?.map((option, index) => (
                 <div
-                    onClick={() => setActive(option.id)}
+                    onClick={() => {
+                        setActive(option.id);
+                        option?.name === "Logout" && logout();
+                    }}
                     key={index}
                     className={`flex items-center gap-2 cursor-pointer ${
                         active === option.id ? "text-red" : ""
