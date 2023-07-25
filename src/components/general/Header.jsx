@@ -108,9 +108,12 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="justify-end hidden lg:flex">
-                    <button className="text-white btn bg-violet-900 hover:bg-purple-800">
+                    <Link
+                        to="/shop/create-shop"
+                        className="text-white btn bg-violet-900 hover:bg-purple-800"
+                    >
                         <span>Become a seller</span> <BiRightArrowAlt size={22} />
-                    </button>
+                    </Link>
                 </div>
                 <button
                     onClick={() => setOpenMenu(true)}

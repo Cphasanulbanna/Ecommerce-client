@@ -3,14 +3,14 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Login from "../../pages/auth/Login";
-import AuthLayout from "../layouts/AuthLayout";
+import FormLayout from "../layouts/FormLayout";
 import Signup from "../../pages/auth/Signup";
 import AccountActivation from "../../pages/auth/AccountActivation";
 import ProtectedRouteAfterLogin from "./ProtectedRouterAfterLogin";
 
 const AuthRouter = () => {
     return (
-        <AuthLayout>
+        <FormLayout>
             <Routes>
                 <Route element={<ProtectedRouteAfterLogin />}>
                     <Route
@@ -28,7 +28,7 @@ const AuthRouter = () => {
                     element={<AccountActivation />}
                 />
             </Routes>
-        </AuthLayout>
+        </FormLayout>
     );
 };
 

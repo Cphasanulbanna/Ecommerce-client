@@ -8,7 +8,7 @@ const ShopRouter = () => {
     return (
         <Routes>
             <Route
-                path="/"
+                path="/create-shop"
                 element={<CreateShop />}
             />
         </Routes>
