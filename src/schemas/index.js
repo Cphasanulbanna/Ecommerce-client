@@ -30,12 +30,14 @@ export const createShopSchema = yup.object().shape({
         .matches(passwordRules, { message: "Please enter a strong password" })
         .required("Paassword is required"),
     shopname: yup.string().min(3, "minimum 3 letter is required").required("Shop name is required"),
-    phoneNumber: number()
+    phoneNumber: yup
+        .number()
         .required("Phone number is required")
         .positive()
         .integer()
         .min(10, "minimum 10 digit is required"),
-    pincode: number()
+    pincode: yup
+        .number()
         .required("Pincode is required")
         .positive()
         .integer()

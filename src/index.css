@@ -4,7 +4,7 @@
 
 /* AUTH STYLES */
 .btn-primary {
-    @apply text-white outline-none btn btn-block bg-primary;
+    @apply text-white outline-none btn btn-block bg-primary min-h-[40px] h-[40px];
 }
 
 .btn-primary:disabled {
