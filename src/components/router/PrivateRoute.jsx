@@ -5,7 +5,7 @@ import { isAuth } from "../../utils/utils";
 
 const PrivateRoute = () => {
     const auth = isAuth();
-    return auth ? <Outlet /> : <Navigate to="/auth/login" />;
+    return auth ? <Outlet /> : <Navigate to={-1} />;
 };
 
 export default PrivateRoute;

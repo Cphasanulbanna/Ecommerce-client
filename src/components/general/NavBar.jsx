@@ -17,6 +17,8 @@ import useOutsideClick from "../../hooks/useOutsideclick";
 import useOutsideScroll from "../../hooks/useOutsideScroll";
 import Wishlist from "../../pages/product/Wishlist";
 
+import { isAuth } from "../../utils/utils";
+
 const NavBar = () => {
     const [opencategories, setOpenCategories] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
@@ -26,16 +28,7 @@ const NavBar = () => {
     const dropdownRef = useRef(null);
 
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const url = `/products?category=${selectedCategory}`;
-        if (selectedCategory) {
-            setOpenCategories(false);
-            navigate(url);
-        }
-    }, [selectedCategory]);
-
-    console.log(selectedCategory, "selected");
+    const auth = isAuth();
 
     const closeCart = () => {
         setOpenCart(false);
@@ -49,6 +42,19 @@ const NavBar = () => {
 
     useOutsideScroll(openCart);
     useOutsideScroll(openWishlist);
+
+    const selectCategory = (category) => {
+        // localStorage.setItem("product_category", category);
+        setSelectedCategory(category);
+        const url = `/products?category=${category}`;
+        navigate(url);
+        setOpenCategories(false);
+    };
+
+    // useEffect(() => {
+    //     const category = localStorage.getItem("product_category");
+    //     setSelectedCategory(category);
+    // }, [selectedCategory]);
 
     return (
         <nav
@@ -97,7 +103,7 @@ const NavBar = () => {
                         {categoriesData?.map((category) => (
                             <div
                                 key={category.id}
-                                onClick={() => setSelectedCategory(category.title)}
+                                onClick={() => selectCategory(category?.title)}
                                 className={`${
                                     selectedCategory === category?.title
                                         ? "text-violet-900 font-bold"
@@ -160,27 +166,31 @@ const NavBar = () => {
                     </NavLink>
                 </div>
                 <div className="items-center justify-end hidden gap-5 lg:flex">
-                    <button
-                        className="relative"
-                        onClick={() => setOpenCart(true)}
-                    >
-                        <FaCartPlus size={25} />
-                        <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
-                            1
-                        </span>
-                    </button>
-                    <button
-                        onClick={() => setOpenWishlist(true)}
-                        className="relative"
-                    >
-                        <AiFillHeart size={25} />
-                        <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
-                            1
-                        </span>
-                    </button>
-                    <Link to="/user/profile">
-                        <BsFillPersonFill size={25} />
-                    </Link>
+                    {auth && (
+                        <>
+                            <button
+                                className="relative"
+                                onClick={() => setOpenCart(true)}
+                            >
+                                <FaCartPlus size={25} />
+                                <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
+                                    1
+                                </span>
+                            </button>
+                            <button
+                                onClick={() => setOpenWishlist(true)}
+                                className="relative"
+                            >
+                                <AiFillHeart size={25} />
+                                <span className="absolute -top-2 -right-1 z-10 w-[15px] leading-[6px] h-[15px] text-white rounded-full overflow-hidden flex justify-center items-center text-xs bg-green-600">
+                                    1
+                                </span>
+                            </button>
+                            <Link to="/user/profile">
+                                <BsFillPersonFill size={25} />
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </nav>

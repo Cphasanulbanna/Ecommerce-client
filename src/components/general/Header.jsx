@@ -8,8 +8,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 import { productData } from "../../static/data";
+
 import useMediaQuery from "../../hooks/useMediaQuery";
+
 import MobileMenu from "./MobileMenu";
+
 import useOutsideClick from "../../hooks/useOutsideclick";
 
 const Header = () => {
@@ -71,7 +74,9 @@ const Header = () => {
                         </div>
 
                         {searchedData.length !== 0 && searchTerm && (
-                            <div className={`absolute top-[50px] w-full bg-white shadow-sm z-10`}>
+                            <div
+                                className={`absolute top-[50px] w-full bg-white shadow-sm z-10 h-[70vh] overflow-scroll`}
+                            >
                                 {searchTerm &&
                                     searchedData.map((product) => {
                                         const productName = product.name;

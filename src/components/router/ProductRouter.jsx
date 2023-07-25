@@ -34,7 +34,7 @@ const ProductRouter = () => {
                     element={<ProductsDetailsPage />}
                 />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
             <BottomNavigation />
         </>
     );
