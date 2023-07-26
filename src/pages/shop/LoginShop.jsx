@@ -10,12 +10,12 @@ import { loginSchema } from "../../schemas";
 import { axiosInstance } from "../../../axiosConfig";
 
 import { useDispatch } from "react-redux";
-import { setUserdata } from "../../redux/reducers/userDataSlice";
+import { setSellerData } from "../../redux/reducers/sellerDataSlice";
 const Login = () => {
     const [viewPassword, setViewPassword] = useState(false);
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const login = async (values, actions) => {
         try {
@@ -28,19 +28,22 @@ const Login = () => {
             });
 
             if (resposne.data.success === true) {
-                const { accessToken, email, fullname, id, profilePic, role } = resposne.data;
+                const { accessToken, email, name, id, logo, phoneNumber, address, pincode } =
+                    resposne.data;
                 dispatch(
-                    setUserdata({
-                        access_token: accessToken,
+                    setSellerData({
+                        seller_access_token: accessToken,
                         email,
-                        fullname,
+                        name,
                         id,
-                        profilePic,
-                        role,
+                        logo,
+                        phoneNumber,
+                        address,
+                        pincode,
                     })
                 );
-                navigate("/");
-                actions.resetForm();
+                // navigate("/");
+                // actions.resetForm();
             }
         } catch (error) {
             console.log(error.message);
@@ -55,7 +58,7 @@ const Login = () => {
 
     return (
         <div className="flex flex-col justify-center w-full h-full gap-4 p-6 font-semibold bg-white rounded-none shadow-sm sm:h-max sm:max-w-md sm:mx-auto sm:gap-8 sm:p-12 sm:rounded-lg">
-            <h1 className="auth-heading">Login to your account</h1>
+            <h1 className="auth-heading">Login to your seller account</h1>
             <Formik
                 onSubmit={login}
                 initialValues={initialValues}

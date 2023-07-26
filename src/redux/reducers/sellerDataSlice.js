@@ -21,6 +21,6 @@ export const sellerDataSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setSellerData, logout, setActiveLink } = sellerDataSlice.actions;
+export const { setSellerData, logout } = sellerDataSlice.actions;
 
 export default sellerDataSlice.reducer;
