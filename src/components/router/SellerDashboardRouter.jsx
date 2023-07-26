@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Routes, Route } from "react-router-dom";
-import SellerDashboard from "../../pages/shop/SellerDashboard";
+import SellerDashboard from "../../pages/seller-dashboard/SellerDashboard";
 
 const SellerDashboardRouter = () => {
     return (

@@ -20,7 +20,7 @@ export const SellerDashboardHeader = () => {
         <header className="bg-violet-100">
             <div className="flex items-center justify-between gap-10 wrapper">
                 <div>
-                    <Link to="/">
+                    <Link to="/shop">
                         <PiShoppingCartSimpleFill
                             className="text-violet-900"
                             size={screenSize > 480 ? 50 : 40}
