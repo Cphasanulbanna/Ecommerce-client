@@ -5,22 +5,25 @@ import { Routes, Route } from "react-router-dom";
 import CreateShop from "../../pages/shop/CreateShop";
 import ShopActivation from "../../pages/shop/ShopActivation";
 import LoginShop from "../../pages/shop/LoginShop";
+import SellerProtectedRouteAfterLogin from "./SellerProtectedRouteAfterLogin";
 
 const ShopRouter = () => {
     return (
         <Routes>
-            <Route
-                path="/create-shop"
-                element={<CreateShop />}
-            />
-            <Route
-                path="/activation/:activation_token"
-                element={<ShopActivation />}
-            />
-            <Route
-                path="/login"
-                element={<LoginShop />}
-            />
+            <Route element={<SellerProtectedRouteAfterLogin />}>
+                <Route
+                    path="/create-shop"
+                    element={<CreateShop />}
+                />
+                <Route
+                    path="/activation/:activation_token"
+                    element={<ShopActivation />}
+                />
+                <Route
+                    path="/login"
+                    element={<LoginShop />}
+                />
+            </Route>
         </Routes>
     );
 };

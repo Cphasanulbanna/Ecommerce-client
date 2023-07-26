@@ -24,6 +24,7 @@ const AppRouter = () => {
                 path="/*"
                 element={<HomeRouter />}
             />
+
             <Route
                 path="/shop/*"
                 element={<ShopRouter />}
