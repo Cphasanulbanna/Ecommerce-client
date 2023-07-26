@@ -41,9 +41,8 @@ export const createShopSchema = yup.object().shape({
         .required("Pincode is required")
         .positive()
         .integer()
-        .min(6, "minimum 6 digit is required")
-        .max(6, "minimum 6 digit is required"),
-    logo: yup.string().required("logo is required"),
+        .min(6, "minimum 6 digit is required"),
+    // logo: yup.string().required("logo is required"),
     address: yup
         .string()
         .min(10, "minimum 10 char is required")

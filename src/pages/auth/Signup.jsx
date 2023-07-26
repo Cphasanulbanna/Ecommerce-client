@@ -10,6 +10,7 @@ import { axiosInstance } from "../../../axiosConfig";
 const Signup = () => {
     const [viewPassword, setViewPassword] = useState(false);
     const [preview, setPreview] = useState(null);
+
     const [isLoading, setIsLoading] = useState(false);
 
     const signup = async (values, actions) => {

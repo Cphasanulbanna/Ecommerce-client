@@ -16,7 +16,7 @@ const CreateShop = () => {
     const createShop = async (values, actions) => {
         try {
             setIsLoading(true);
-            const response = await axiosInstance("/auth/signup", {
+            const response = await axiosInstance("/shop/create-shop", {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -28,7 +28,6 @@ const CreateShop = () => {
         } catch (error) {
             console.log("error");
         } finally {
-            // actions.resetForm();
             setIsLoading(false);
         }
     };
