@@ -3,3 +3,9 @@ export const isAuth = () => {
     const accessToken = userData?.access_token;
     return accessToken ? true : false;
 };
+
+export const sellerAuth = () => {
+    const sellerData = JSON.parse(localStorage.getItem("seller_data"));
+    const accessToken = sellerData?.access_token;
+    return accessToken ? true : false;
+};
