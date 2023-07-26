@@ -19,7 +19,6 @@ export const userDataSlice = createSlice({
         },
         logout: (state) => {
             state.userdata = null;
-            localStorage.clear();
         },
     },
 });

@@ -224,6 +224,12 @@ const CreateShop = () => {
                                 >
                                     Signup
                                 </button>
+
+                                <div>
+                                    <p>
+                                        Already have an account? <Link to="/shop/login">Login</Link>
+                                    </p>
+                                </div>
                             </div>
                         </Form>
                     )}
