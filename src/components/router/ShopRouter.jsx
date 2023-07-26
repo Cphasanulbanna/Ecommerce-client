@@ -6,6 +6,8 @@ import CreateShop from "../../pages/shop/CreateShop";
 import ShopActivation from "../../pages/shop/ShopActivation";
 import LoginShop from "../../pages/shop/LoginShop";
 import SellerProtectedRouteAfterLogin from "./SellerProtectedRouteAfterLogin";
+import SellerPrivateRoute from "./SellerPrivateRoute";
+import SellerDashboardRouter from "./SellerDashboardRouter";
 
 const ShopRouter = () => {
     return (
@@ -22,6 +24,13 @@ const ShopRouter = () => {
                 <Route
                     path="/login"
                     element={<LoginShop />}
+                />
+            </Route>
+
+            <Route element={<SellerPrivateRoute />}>
+                <Route
+                    path="/dashboard/*"
+                    element={<SellerDashboardRouter />}
                 />
             </Route>
         </Routes>
