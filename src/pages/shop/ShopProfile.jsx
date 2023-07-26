@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShopProfile = () => {
     return (
-        <div className="sticky top-0 z-20 p-6 bg-white w-[300px] h-screen shadow-lg">
+        <div className="sticky top-0 z-20 w-1/5 h-screen p-6 bg-white shadow-lg">
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-2">
                     <div className="sm:w-[120px] sm:h-[120px] h-[80px] w-[80px] rounded-full overflow-hidden cursor-pointer shadow-lg p-2">
