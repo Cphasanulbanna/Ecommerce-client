@@ -42,7 +42,7 @@ export const createShopSchema = yup.object().shape({
         .positive()
         .integer()
         .min(6, "minimum 6 digit is required"),
-    // logo: yup.string().required("logo is required"),
+    logo: yup.string().required("logo is required"),
     address: yup
         .string()
         .min(10, "minimum 10 char is required")
