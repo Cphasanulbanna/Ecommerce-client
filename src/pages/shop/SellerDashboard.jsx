@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Header } from "./Header";
+import { SellerDashboardHeader } from "./SellerDashboardHeader";
 
 const SellerDashboard = () => {
     return (
         <div>
-            <Header />
+            <SellerDashboardHeader />
         </div>
     );
 };
