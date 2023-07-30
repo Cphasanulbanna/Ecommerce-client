@@ -1,14 +1,36 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
-const ShopHeader = () => {
+const ShopHeader = ({ setActivePage, activePage }) => {
+    const { id } = useParams();
     return (
-        <header className="sticky top-0 flex justify-center p-12 bg-red">
+        <header className="flex justify-center p-4 shadow-md">
             <nav className="flex items-center gap-4">
-                <Link to="/">products</Link>
-                <Link to="/">Running Events</Link>
-                <Link to="/">Shop Reviews</Link>
+                <div
+                    className={`${
+                        activePage === "products" ? "text-red" : ""
+                    } font-semibold text-deep-blue  cursor-pointer`}
+                    onClick={() => setActivePage("products")}
+                >
+                    products
+                </div>
+                <div
+                    className={`${
+                        activePage === "events" ? "text-red" : ""
+                    } font-semibold text-deep-blue  cursor-pointer`}
+                    onClick={() => setActivePage("events")}
+                >
+                    Running Events
+                </div>
+                <div
+                    className={`${
+                        activePage === "reviews" ? "text-red" : ""
+                    } font-semibold text-deep-blue  cursor-pointer`}
+                    onClick={() => setActivePage("reviews")}
+                >
+                    Shop Reviews
+                </div>
             </nav>
         </header>
     );

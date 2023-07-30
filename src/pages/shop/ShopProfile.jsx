@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShopProfile = () => {
     return (
-        <div className="sticky top-0 z-20 w-1/5 h-screen p-6 bg-white shadow-lg">
+        <div className="w-1/5 h-screen p-6 bg-white shadow-lg">
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-2">
                     <div className="sm:w-[120px] sm:h-[120px] h-[80px] w-[80px] rounded-full overflow-hidden cursor-pointer shadow-lg p-2">
@@ -42,13 +42,13 @@ const ShopProfile = () => {
                 <div className="flex flex-col gap-2">
                     <Link
                         to="/"
-                        className="w-full text-white rounded-none btn bg-deep-blue"
+                        className="w-full font-normal text-white rounded-none btn bg-deep-blue hover:bg-deep-blue"
                     >
                         Edit Shop
                     </Link>
                     <Link
                         to="/"
-                        className="w-full text-white rounded-none btn bg-deep-blue"
+                        className="w-full font-normal text-white rounded-none btn bg-deep-blue hover:bg-deep-blue"
                     >
                         Edit Shop
                     </Link>

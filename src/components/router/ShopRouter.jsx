@@ -10,6 +10,9 @@ import ShopHomepage from "../../pages/ShopHomepage";
 import SellerProtectedRouteAfterLogin from "./SellerProtectedRouteAfterLogin";
 import SellerPrivateRoute from "./SellerPrivateRoute";
 import SellerDashboardRouter from "./SellerDashboardRouter";
+import ShopProducts from "../../pages/shop/ShopProducts";
+import ShopEvents from "../../pages/shop/ShopEvents";
+import ShopReviews from "../../pages/shop/ShopReviews";
 
 const ShopRouter = () => {
     return (
