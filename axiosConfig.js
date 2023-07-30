@@ -26,13 +26,24 @@ axiosInstance.interceptors.response.use(
 axiosInstance.interceptors.request.use(
     (request) => {
         const userData = JSON.parse(localStorage.getItem("user_data"));
+        const sellerData = JSON.parse(localStorage.getItem("seller_data"));
 
         const accessToken = userData?.access_token;
         const bearerToken = `Bearer ${accessToken}`;
 
+        const sellerAccessToken = sellerData?.seller_access_token;
+        const sellerBearerToken = `Bearer ${sellerAccessToken}`;
+
         if (accessToken) {
             request.headers.authorization = bearerToken;
             request.withCredentials = true;
+        }
+
+        if (sellerAccessToken) {
+            if (request.url.includes("shop")) {
+                request.headers.authorization = sellerBearerToken;
+                request.withCredentials = true;
+            }
         }
         return request;
     },

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { axiosInstance } from "../../../axiosConfig";
 
 const sellerData = localStorage.getItem("seller_data")
     ? JSON.parse(localStorage.getItem("seller_data"))
