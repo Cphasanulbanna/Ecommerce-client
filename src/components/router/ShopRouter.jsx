@@ -39,7 +39,7 @@ const ShopRouter = () => {
 
             <Route element={<SellerPrivateRoute />}>
                 <Route
-                    path="/dashboard/:id/*"
+                    path="/dashboard/*"
                     element={<SellerDashboardRouter />}
                 />
             </Route>

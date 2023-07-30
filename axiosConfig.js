@@ -39,8 +39,10 @@ axiosInstance.interceptors.request.use(
             request.withCredentials = true;
         }
 
+        console.log(request.url);
+
         if (sellerAccessToken) {
-            if (request.url.includes("shop")) {
+            if (request.url.startsWith("/shop")) {
                 request.headers.authorization = sellerBearerToken;
                 request.withCredentials = true;
             }

@@ -6,7 +6,7 @@ import { sellerAuth } from "../../utils/utils";
 
 const SellerProtectedRouteAfterLogin = () => {
     const auth = sellerAuth();
-    return auth ? <Navigate to={-1} /> : <Outlet />;
+    return auth ? <Navigate to={"/"} /> : <Outlet />;
 };
 
 export default SellerProtectedRouteAfterLogin;

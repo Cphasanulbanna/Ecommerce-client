@@ -8,6 +8,7 @@ import HomeRouter from "./HomeRouter";
 import UserRouter from "./UserRouter";
 import PrivateRoute from "./PrivateRoute";
 import ShopRouter from "./ShopRouter";
+import PageNotFound from "../general/PageNotFound";
 
 const AppRouter = () => {
     return (
@@ -36,6 +37,11 @@ const AppRouter = () => {
                     element={<UserRouter />}
                 />
             </Route>
+
+            <Route
+                path="*"
+                element={<PageNotFound />}
+            />
         </Routes>
     );
 };

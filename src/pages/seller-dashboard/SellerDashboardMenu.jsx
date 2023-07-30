@@ -9,9 +9,10 @@ import { GiMoneyStack } from "react-icons/gi";
 import { BiMessageDetail } from "react-icons/bi";
 import { RiCoupon2Line, RiRefundLine } from "react-icons/ri";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const SellerDashboardMenu = () => {
+    const { id } = useParams();
     return (
         <div className="w-1/5 h-screen p-6 bg-white shadow-sm">
             <div className="flex flex-col gap-8">
@@ -56,7 +57,7 @@ const SellerDashboardMenu = () => {
                     Create Product
                 </NavLink>
                 <NavLink
-                    to="/shop/dashboard/"
+                    to="/shop/dashboard/create-product"
                     className={`${({ isActive }) =>
                         isActive
                             ? "text-violet-800"
