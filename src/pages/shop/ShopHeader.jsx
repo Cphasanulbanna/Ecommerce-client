@@ -1,11 +1,11 @@
 import React from "react";
 
-import { NavLink, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const ShopHeader = ({ setActivePage, activePage }) => {
+const ShopHeader = ({ setActivePage, activePage, isOwner }) => {
     const { id } = useParams();
     return (
-        <header className="flex justify-center p-4 shadow-md">
+        <header className="flex justify-between p-4 shadow-md h-[80px]">
             <nav className="flex items-center gap-4">
                 <div
                     className={`${
@@ -31,7 +31,15 @@ const ShopHeader = ({ setActivePage, activePage }) => {
                 >
                     Shop Reviews
                 </div>
-            </nav>
+            </nav>{" "}
+            {isOwner && (
+                <Link
+                    to={`/shop/dashboard/${id}`}
+                    className="font-normal text-white rounded-none bg-deep-blue hover:bg-deep-blue btn"
+                >
+                    Go to Dashboard
+                </Link>
+            )}
         </header>
     );
 };
