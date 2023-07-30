@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-const ShopHeader = ({ setActivePage, activePage, isOwner }) => {
+const ShopHeader = ({ setActivePage, activePage, isOwner = true }) => {
     const { id } = useParams();
     return (
         <header className="flex justify-between p-4 shadow-md h-[80px]">

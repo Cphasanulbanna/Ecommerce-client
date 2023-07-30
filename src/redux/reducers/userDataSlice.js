@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { axiosInstance } from "../../../axiosConfig";
 
 const userData = localStorage.getItem("user_data")
     ? JSON.parse(localStorage.getItem("user_data"))
@@ -6,6 +7,18 @@ const userData = localStorage.getItem("user_data")
 
 const initialState = {
     userdata: userData,
+};
+
+export const fetchUserData = () => async (dispatch) => {
+    try {
+        const response = await axiosInstance("/user/profile", {
+            method: "GET",
+        });
+        dispatch(setUserdata(response?.data));
+        localStorage.setItem("user_data", JSON.stringify(data));
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
 };
 
 export const userDataSlice = createSlice({

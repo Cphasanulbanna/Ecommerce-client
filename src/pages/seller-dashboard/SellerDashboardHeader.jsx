@@ -17,8 +17,8 @@ export const SellerDashboardHeader = () => {
     console.log("header");
     const screenSize = useMediaQuery();
     return (
-        <header className="bg-violet-100">
-            <div className="flex items-center justify-between gap-10 wrapper">
+        <header className="shadow-sm bg-violet-100">
+            <div className="flex items-center justify-between gap-10 px-5 py-3">
                 <div>
                     <Link to="/shop">
                         <PiShoppingCartSimpleFill
@@ -67,7 +67,7 @@ export const SellerDashboardHeader = () => {
                         </Link>
                     </nav>
                     <Link
-                        className="w-[60px] h-[60px] rounded-full overflow-hidden"
+                        className="w-[40px] h-[40px] rounded-full overflow-hidden"
                         to="/seller/:id"
                     >
                         <img
