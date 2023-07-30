@@ -8,6 +8,17 @@ const initialState = {
     sellerdata: sellerData,
 };
 
+export const fetchSellerData = () => async (dispatch) => {
+    try {
+        const response = await axiosInstance("/shop/seller", {
+            method: "GET",
+        });
+        dispatch(setSellerData(response?.data));
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
+};
+
 export const sellerDataSlice = createSlice({
     name: "sellerdata",
     initialState,

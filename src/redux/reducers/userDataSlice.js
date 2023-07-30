@@ -11,11 +11,10 @@ const initialState = {
 
 export const fetchUserData = () => async (dispatch) => {
     try {
-        const response = await axiosInstance("/user/profile", {
+        const response = await axiosInstance("/user", {
             method: "GET",
         });
         dispatch(setUserdata(response?.data));
-        localStorage.setItem("user_data", JSON.stringify(data));
     } catch (error) {
         console.error("Error fetching user data:", error);
     }
