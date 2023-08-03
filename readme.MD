@@ -1,6 +1,6 @@
 # MERN Stack Ecommerce Project
 
-Welcome to the MERN Stack Ecommerce Project! This ongoing project utilizes the MERN stack (MongoDB, Express.js, React, and Node.js) to create a full-fledged ecommerce application with various features. The project includes a login/signup page, homepage, products page, FAQ page, events page, search functionality, category-based product filtering, a best deals section, and more.
+Welcome to the MERN Stack Ecommerce Project! This ongoing project utilizes the MERN stack (MongoDB, Express.js, React, and Node.js) to create a full-fledged ecommerce application with various features. The project includes a login/signup page, homepage, products page, FAQ page, events page, search functionality, category-based product filtering, a best deals section, and more
 
 ## SIGNUP & LOGIN PAGE
 

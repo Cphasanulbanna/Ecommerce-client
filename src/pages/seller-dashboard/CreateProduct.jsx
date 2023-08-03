@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
     const { sellerdata } = useSelector((state) => state.sellerdata);
-    console.log(sellerdata, "data");
+    // console.log(sellerdata, "data");
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
